@@ -57,7 +57,7 @@ function ImersaoPage() {
       {!IMERSAO_ATIVA && (
         <div className="bg-[var(--color-surface-dark)] text-[var(--color-on-dark)] py-4 px-6 text-center text-[14px]">
           Esta edição está encerrada.{" "}
-          <span className="text-[var(--color-gold)]">
+          <span className="text-[var(--color-gold-on-dark)]">
             Próxima turma em breve — entre na lista de espera.
           </span>
         </div>
@@ -178,7 +178,7 @@ function ImersaoPage() {
           {MOMENTOS.map((m, i) => (
             <FadeIn key={i} delay={i * 80}>
               <div className="bg-[var(--color-surface-dark)] p-6 h-full">
-                <p className="text-[12px] text-[var(--color-gold)] tracking-wider uppercase">
+                <p className="text-[12px] text-[var(--color-gold-on-dark)] tracking-wider uppercase">
                   {m.label}
                 </p>
                 <h3 className="mt-4 font-serif text-[20px] text-[var(--color-on-dark)]">
