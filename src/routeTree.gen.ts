@@ -15,6 +15,7 @@ import { Route as PalestranteRouteImport } from './routes/palestrante'
 import { Route as MentoriaNegociosRouteImport } from './routes/mentoria-negocios'
 import { Route as MentoriaExecutivaRouteImport } from './routes/mentoria-executiva'
 import { Route as LogosRouteImport } from './routes/logos'
+import { Route as LogofinalRouteImport } from './routes/logofinal'
 import { Route as ImersaoRouteImport } from './routes/imersao'
 import { Route as DiagnosticoRouteImport } from './routes/diagnostico'
 import { Route as ConceitosRouteImport } from './routes/conceitos'
@@ -51,6 +52,11 @@ const LogosRoute = LogosRouteImport.update({
   path: '/logos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LogofinalRoute = LogofinalRouteImport.update({
+  id: '/logofinal',
+  path: '/logofinal',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ImersaoRoute = ImersaoRouteImport.update({
   id: '/imersao',
   path: '/imersao',
@@ -83,6 +89,7 @@ export interface FileRoutesByFullPath {
   '/conceitos': typeof ConceitosRoute
   '/diagnostico': typeof DiagnosticoRoute
   '/imersao': typeof ImersaoRoute
+  '/logofinal': typeof LogofinalRoute
   '/logos': typeof LogosRoute
   '/mentoria-executiva': typeof MentoriaExecutivaRoute
   '/mentoria-negocios': typeof MentoriaNegociosRoute
@@ -96,6 +103,7 @@ export interface FileRoutesByTo {
   '/conceitos': typeof ConceitosRoute
   '/diagnostico': typeof DiagnosticoRoute
   '/imersao': typeof ImersaoRoute
+  '/logofinal': typeof LogofinalRoute
   '/logos': typeof LogosRoute
   '/mentoria-executiva': typeof MentoriaExecutivaRoute
   '/mentoria-negocios': typeof MentoriaNegociosRoute
@@ -110,6 +118,7 @@ export interface FileRoutesById {
   '/conceitos': typeof ConceitosRoute
   '/diagnostico': typeof DiagnosticoRoute
   '/imersao': typeof ImersaoRoute
+  '/logofinal': typeof LogofinalRoute
   '/logos': typeof LogosRoute
   '/mentoria-executiva': typeof MentoriaExecutivaRoute
   '/mentoria-negocios': typeof MentoriaNegociosRoute
@@ -125,6 +134,7 @@ export interface FileRouteTypes {
     | '/conceitos'
     | '/diagnostico'
     | '/imersao'
+    | '/logofinal'
     | '/logos'
     | '/mentoria-executiva'
     | '/mentoria-negocios'
@@ -138,6 +148,7 @@ export interface FileRouteTypes {
     | '/conceitos'
     | '/diagnostico'
     | '/imersao'
+    | '/logofinal'
     | '/logos'
     | '/mentoria-executiva'
     | '/mentoria-negocios'
@@ -151,6 +162,7 @@ export interface FileRouteTypes {
     | '/conceitos'
     | '/diagnostico'
     | '/imersao'
+    | '/logofinal'
     | '/logos'
     | '/mentoria-executiva'
     | '/mentoria-negocios'
@@ -165,6 +177,7 @@ export interface RootRouteChildren {
   ConceitosRoute: typeof ConceitosRoute
   DiagnosticoRoute: typeof DiagnosticoRoute
   ImersaoRoute: typeof ImersaoRoute
+  LogofinalRoute: typeof LogofinalRoute
   LogosRoute: typeof LogosRoute
   MentoriaExecutivaRoute: typeof MentoriaExecutivaRoute
   MentoriaNegociosRoute: typeof MentoriaNegociosRoute
@@ -217,6 +230,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LogosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/logofinal': {
+      id: '/logofinal'
+      path: '/logofinal'
+      fullPath: '/logofinal'
+      preLoaderRoute: typeof LogofinalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/imersao': {
       id: '/imersao'
       path: '/imersao'
@@ -261,6 +281,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConceitosRoute: ConceitosRoute,
   DiagnosticoRoute: DiagnosticoRoute,
   ImersaoRoute: ImersaoRoute,
+  LogofinalRoute: LogofinalRoute,
   LogosRoute: LogosRoute,
   MentoriaExecutivaRoute: MentoriaExecutivaRoute,
   MentoriaNegociosRoute: MentoriaNegociosRoute,
