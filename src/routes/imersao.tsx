@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+
 import { Section, Supratitle } from "@/components/Section";
 import { CtaDuplo } from "@/components/CtaDuplo";
 import { FadeIn } from "@/components/FadeIn";
