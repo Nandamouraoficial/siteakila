@@ -1,39 +1,30 @@
 ## Objetivo
 
-Gerar **6 novas opções (10–15)** explorando combinações criativas entre o wordmark "AKILA" e a águia, variando a **posição da marca** (acima, atravessando, ao lado, abaixo) e o **tratamento gráfico** — todas elegantes, premium, high-ticket, com a águia integrada à tipografia em vez de competir com ela.
+No Conceito 7 da página `/conceitos`, trocar o traço dourado fluido por uma **águia estilizada em voo** que atravessa horizontalmente o wordmark AKILA — mantendo elegância premium (fina, monolinha, não decorativa demais).
 
-Adicionar tudo na página `/logos` para você comparar.
+## Mudanças
 
-## As 6 direções
+Arquivo único: `src/routes/conceitos.tsx` — apenas o componente `Concept7`.
 
-**Opção 10 — Águia integrada (refinamento da #9)**
-Traço caligráfico dourado fluido atravessa o wordmark sugerindo asas em voo, mas desta vez **sem cortar o subtítulo** e com o traço posicionado entre o wordmark e o subtítulo (não sobre as letras). Versão limpa, integrada.
+### Nova composição do Conceito 7
 
-**Opção 11 — Águia acima, centralizada (selo)**
-Pequena águia geométrica em mostarda centralizada acima do wordmark esmeralda, separada por filete dourado horizontal fino. Composição vertical em três blocos: mark · rule · wordmark.
+- Wordmark "AKILA" — Cormorant Garamond 58px, letter-spacing 10px, #006039 (inalterado).
+- Tagline "CONSULTORIA EXECUTIVA" — Inter 10px, letter-spacing 5px, #B8860B (inalterado).
+- **Águia em SVG** atravessando o nome no centro vertical, em #B8860B, stroke 1.5px, sem preenchimento (exceto detalhes mínimos):
+  - **Corpo + asas abertas**: uma única linha contínua que entra pela esquerda como ponta da asa esquerda, sobe suavemente, forma o topo da asa, desce até o corpo central (entre o "K" e o "I"), e sai pela direita formando a asa direita com leve curvatura ascendente final.
+  - **Cabeça**: pequeno triângulo/bico discreto no centro do corpo, voltado para a direita (sutil, ~6px).
+  - **Cauda**: traço fino diagonal curto saindo do centro para baixo-esquerda (opcional, contido).
+  - Estilo: monolinha geométrica minimalista — referência visual a brasões executivos modernos, não clipart.
+- A águia fica em **z-index 0** (atrás das letras), o wordmark em z-index 1 — sensação de que o nome repousa sobre o voo.
+- Centro vertical da águia alinhado à linha média das letras (≈ y=45 num container de 90px de altura).
+- Envergadura ≈ 100% da largura do wordmark (não ultrapassar muito as bordas das letras).
 
-**Opção 12 — Águia ao lado esquerdo (lockup horizontal)**
-Águia compacta em mostarda à esquerda + filete vertical separador dourado + wordmark esmeralda à direita com subtítulo abaixo. Lockup horizontal premium tipo cabeçalho de papelaria.
+### Versão fundo verde
 
-**Opção 13 — Águia abaixo (assinatura)**
-Wordmark esmeralda dominante no topo + filete dourado fino + pequena águia em mostarda centralizada abaixo, como assinatura/selo no rodapé. Inversão da Opção 11.
+- Wordmark em #F2EBD9, águia e tagline em #B8860B (inalterado em relação ao padrão atual).
 
-**Opção 14 — Asas envolvendo o wordmark**
-Duas asas finas em traço dourado abrem-se simetricamente ladeando o wordmark esmeralda (uma à esquerda, outra à direita), como se a tipografia fosse o corpo da águia. Composição protegida/heráldica.
+## Detalhe técnico
 
-**Opção 15 — Águia como inicial "A"**
-A primeira letra "A" do wordmark é substituída por uma águia geométrica dourada estilizada que mantém a forma triangular do A. As demais letras "KILA" seguem em serifa esmeralda. Integração tipográfica radical.
+Manter a mesma assinatura `Concept7({ wordColor, taglineColor, lineColor })` e o mesmo container `position: relative` com SVG absoluto + h2 absoluto centralizado. Apenas o `<path>` único atual é substituído por um grupo SVG representando a águia (1 path principal para asas+corpo, 1 polígono pequeno para o bico, 1 line curta opcional para a cauda).
 
-## Implementação
-
-1. Gerar as 6 imagens em paralelo via `imagegen--generate_image` (premium, transparente, salvas em `src/assets/logo-akila-option-{10..15}.png`).
-2. Atualizar `src/routes/logos.tsx`:
-   - Adicionar os 6 novos imports.
-   - Adicionar as 6 entradas no array `OPTIONS` com nome e descrição.
-   - O layout de cards (fundo claro + fundo escuro) já existente cobre todas automaticamente.
-
-Nenhuma outra página é afetada.
-
-## Próximo passo
-
-Depois que você escolher a vencedora final, entrego variantes finais (PNG fundo claro / PNG fundo escuro / SVG) e aplico no Navbar e Footer.
+Nenhuma outra parte da página, demais conceitos, ou outros arquivos são tocados.
