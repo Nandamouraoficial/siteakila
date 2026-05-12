@@ -151,7 +151,7 @@ function Lockup({
           letterSpacing: 5,
           textTransform: "uppercase",
           marginTop: 14,
-          textShadow: shadow ? TAGLINE_SHADOWS[shadow] : undefined,
+          textShadow: shadow ? GOLD_SHADOWS[shadow] : undefined,
         }}
       >
         Consultoria Executiva
