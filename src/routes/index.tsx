@@ -1,26 +1,196 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Section, Supratitle } from "@/components/Section";
+import { CtaDuplo } from "@/components/CtaDuplo";
+import { FadeIn } from "@/components/FadeIn";
+import { FORM_URLS, PRODUCTS } from "@/lib/site-config";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Akila Consultoria — Estratégia de carreira para executivos" },
+      {
+        name: "description",
+        content:
+          "Fernanda Moura. 26 anos de carreira executiva em multinacionais. Estratégias de carreira para executivos que jogam no alto nível.",
+      },
+      {
+        property: "og:title",
+        content: "Akila Consultoria — Estratégia de carreira para executivos",
+      },
+      {
+        property: "og:description",
+        content:
+          "Fernanda Moura. 26 anos de carreira executiva. Estratégias de carreira para quem joga no alto nível.",
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
+const TESTIMONIALS = [
+  {
+    quote: "[DEPOIMENTO_1]",
+    author: "[Nome]",
+    role: "[Cargo]",
+    company: "[Empresa]",
+  },
+  {
+    quote: "[DEPOIMENTO_2]",
+    author: "[Nome]",
+    role: "[Cargo]",
+    company: "[Empresa]",
+  },
+  {
+    quote: "[DEPOIMENTO_3]",
+    author: "[Nome]",
+    role: "[Cargo]",
+    company: "[Empresa]",
+  },
+];
 
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <>
+      {/* HERO */}
+      <section className="bg-background px-6 md:px-10">
+        <div className="mx-auto max-w-6xl min-h-[88vh] grid grid-cols-1 md:grid-cols-5 gap-12 items-center py-16 md:py-0">
+          <div className="md:col-span-3 order-2 md:order-1">
+            <FadeIn>
+              <Supratitle>Estrategista de carreira para executivos</Supratitle>
+            </FadeIn>
+            <FadeIn delay={120}>
+              <h1 className="mt-6 font-serif text-[var(--color-foreground)] leading-[1.05]">
+                Você chegou longe.
+                <br />
+                O próximo passo
+                <br />
+                precisa ser certo.
+              </h1>
+            </FadeIn>
+            <FadeIn delay={240}>
+              <p className="mt-8 max-w-[480px] text-[18px] text-[var(--color-muted-foreground)] leading-relaxed">
+                Fernanda Moura. 26 anos de carreira executiva em multinacionais.
+                Estratégias de carreira para quem joga no alto nível.
+              </p>
+            </FadeIn>
+            <FadeIn delay={360}>
+              <div className="mt-10">
+                <CtaDuplo
+                  primaryLabel="Quero conversar"
+                  secondaryLabel="Agendar 30 minutos"
+                  formUrl={FORM_URLS.geral}
+                />
+              </div>
+            </FadeIn>
+          </div>
+          <div className="md:col-span-2 order-1 md:order-2">
+            <FadeIn>
+              <div className="aspect-[3/4] w-full bg-[var(--color-gold-soft)] flex items-center justify-center text-[var(--color-muted-foreground)] text-sm tracking-wider">
+                [FOTO_FERNANDA_HERO]
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* SOBRE */}
+      <Section variant="dark">
+        <div className="text-center max-w-3xl mx-auto">
+          <FadeIn>
+            <Supratitle>Quem é Fernanda Moura</Supratitle>
+          </FadeIn>
+          <FadeIn delay={120}>
+            <div className="mt-8 space-y-6 text-[17px] leading-[1.8] text-[var(--color-on-dark)]">
+              <p>
+                26 anos de carreira em Coca-Cola, Cargill, Kraft Heinz, BRF,
+                Kimberly-Clark, Unilever, Amil e outras multinacionais. Liderou
+                times de até 800 pessoas e operações em 15 países. Passou por
+                gerência, diretoria e C-Level internacional para América Latina.
+              </p>
+              <p>
+                Hoje ajuda executivos a decidirem o próximo movimento, executarem
+                transições e sustentarem novos níveis de liderança — com
+                estratégia, não com motivação.
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+      </Section>
+
+      {/* PRODUTOS */}
+      <Section>
+        <FadeIn>
+          <h2 className="text-center mb-16">Como posso ajudar</h2>
+        </FadeIn>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[var(--color-border)]">
+          {PRODUCTS.map((p, i) => (
+            <FadeIn key={p.to} delay={i * 80}>
+              <Link
+                to={p.to}
+                className="group block bg-background p-8 h-full border-t-[3px] border-[var(--color-gold)] hover:bg-[var(--color-gold-soft)]/30 transition-colors"
+              >
+                <p className="font-serif text-[48px] text-[var(--color-gold-soft)] leading-none">
+                  {p.number}
+                </p>
+                <h3 className="mt-4 font-serif text-[22px] text-[var(--color-foreground)]">
+                  {p.name}
+                </h3>
+                <p className="mt-3 text-[15px] text-[var(--color-muted-foreground)] leading-relaxed">
+                  {p.description}
+                </p>
+                <p className="mt-6 text-[14px] text-[var(--color-gold)] tracking-wider">
+                  Saiba mais →
+                </p>
+              </Link>
+            </FadeIn>
+          ))}
+        </div>
+      </Section>
+
+      {/* DEPOIMENTOS */}
+      <Section variant="dark">
+        <FadeIn>
+          <h2 className="text-center mb-16 text-[var(--color-gold)]">O que dizem</h2>
+        </FadeIn>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {TESTIMONIALS.map((t, i) => (
+            <FadeIn key={i} delay={i * 100}>
+              <div className="border-t border-[var(--color-gold)] pt-6">
+                <p className="font-serif text-[48px] text-[var(--color-gold)] leading-none">
+                  &ldquo;
+                </p>
+                <p className="text-[16px] italic leading-relaxed text-[var(--color-on-dark)]">
+                  {t.quote}
+                </p>
+                <p className="mt-6 text-[14px] text-[var(--color-gold)]">
+                  {t.author} · {t.role} · {t.company}
+                </p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </Section>
+
+      {/* CTA FINAL */}
+      <Section>
+        <div className="text-center max-w-3xl mx-auto">
+          <FadeIn>
+            <h2 className="text-[var(--color-foreground)]">
+              A conversa mais importante da sua carreira pode ser a próxima.
+            </h2>
+          </FadeIn>
+          <FadeIn delay={120}>
+            <div className="mt-10 flex justify-center">
+              <CtaDuplo
+                primaryLabel="Quero conversar"
+                secondaryLabel="Agendar 30 minutos"
+                formUrl={FORM_URLS.geral}
+                align="center"
+              />
+            </div>
+          </FadeIn>
+        </div>
+      </Section>
+    </>
+  );
 }
