@@ -1,45 +1,39 @@
 ## Objetivo
 
-Substituir a página `/conceitos` por uma apresentação focada na **versão refinada do logo anexado** (wordmark AKILA + swash dourado em forma de águia estilizada abaixo + tagline) aplicada em **6 variações tipográficas**.
+Reforçar o destaque do wordmark "AKILA" sobre o fundo off-white (#F2EBD9) e sobre o fundo verde escuro (#006039) na página `/conceitos`, sem alterar a tipografia escolhida (Cormorant Garamond 700, 56px, tracking 16) nem o swash dourado.
 
-## Estrutura da nova página
+## Mudanças em `src/routes/conceitos.tsx`
 
-Topo:
-- Header com supratítulo "Direção de marca" + título "AKILA — Estudo Tipográfico" e linha curta de contexto.
+### 1. Paleta de contraste reforçada
+Adicionar duas variações mais escuras/claras das cores base, usadas exclusivamente no wordmark:
 
-Bloco 1 — **Versão Refinada (Base)**:
-- Aperfeiçoamento da imagem anexada — mesmo conceito (swash dourado abaixo do nome) mas com:
-  - Linha do swash mais fina e elegante (1.2–1.5px), sem aspecto pesado.
-  - Pequeno detalhe central da águia mais legível (mini bico/cabeça discreto, não torcido).
-  - Tagline "CONSULTORIA EXECUTIVA" Inter 10px, letter-spacing 5px, #B8860B, sem cortes.
-  - Wordmark Cormorant Garamond 400, 56px, letter-spacing 12px, #006039.
-- Exibido em fundo creme + fundo verde lado a lado.
+- `GREEN_DEEP = #00301C` — verde quase preto, ~2× mais escuro que `#006039`. Usado para o wordmark sobre fundo creme (eleva contraste de ~7:1 para ~13:1).
+- `CREAM_BRIGHT = #FBF6E8` — creme mais luminoso. Usado para o wordmark sobre fundo verde (contraste mais nítido que o creme atual).
 
-Bloco 2 — **6 Variações Tipográficas** (todas usam o mesmo swash dourado refinado abaixo, para comparação justa):
+Swash e tagline continuam em `#B8860B` (dourado), e os fundos continuam `#F2EBD9` / `#006039` — só a cor do nome muda.
 
-| # | Fonte / peso | Tamanho | Letter-spacing | Caráter |
-|---|---|---|---|---|
-| 1 | Cormorant Garamond 300 | 58px | 14px | etéreo, delicado |
-| 2 | Cormorant Garamond 600 | 58px | 10px | autoridade, presença |
-| 3 | Playfair Display 400 | 54px | 12px | editorial Vogue/FT |
-| 4 | Playfair Display 700 | 54px | 8px | máximo impacto |
-| 5 | Cormorant Garamond 400 | 48px | 22px | espaçamento Hermès/Cartier |
-| 6 | Cormorant Garamond 400 italic | 58px | 10px | movimento, complementa águia |
+### 2. Sombra/halo sutil no `Wordmark`
+Acrescentar `textShadow` parametrizado para dar peso ótico sem aspecto "dropshadow":
 
-Cada variação é renderizada em **duas colunas lado a lado**: fundo creme (#F2EBD9) à esquerda + fundo verde (#006039) à direita, com cores invertidas no wordmark (#006039 / #F2EBD9). Swash e tagline sempre em #B8860B.
+- Sobre creme: halo dourado finíssimo `0 0 1px rgba(184,134,11,0.35)` + sombra interna escura `0 1px 0 rgba(0,48,28,0.25)` para fixar a letra no fundo.
+- Sobre verde: halo creme finíssimo `0 0 1px rgba(251,246,232,0.45)` para separar a letra do verde profundo (sem brilho exagerado).
 
-Cada bloco tem cabeçalho com numeração (01–06), nome da variação (ex.: "Cormorant Garamond Light · 300") e moldura fina dourada.
+A sombra é controlada por uma nova prop opcional `shadow: "onLight" | "onDark"` em `Wordmark` e `Lockup`.
 
-## Detalhe técnico
+### 3. Aplicação no `Block`
+- Stage creme → `wordColor={GREEN_DEEP}` + `shadow="onLight"`.
+- Stage verde → `wordColor={CREAM_BRIGHT}` + `shadow="onDark"`.
 
-Arquivo único: `src/routes/conceitos.tsx` (substituição completa).
+A versão Base e as 6 variações herdam automaticamente, já que todas passam pelo `Block`.
 
-- Carregar Google Fonts: `Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400` + `Playfair+Display:wght@400;700` + `Inter:wght@400;500`.
-- Componente `Wordmark({ font, weight, size, spacing, italic, color })` — renderiza apenas o nome com tipografia parametrizada.
-- Componente `EagleSwash({ color })` — SVG do swash refinado: duas curvas finas espelhadas saindo do centro com leve queda nas pontas + pequeno detalhe central (cabeça/bico minimalista). Largura ~340px, altura ~24px, stroke 1.3px.
-- Componente `Lockup({ ...typographyProps, wordColor, accentColor })` — wordmark + swash + tagline em coluna, centralizado.
-- Componente `Stage({ bg })` reutilizado para fundo creme/verde lado a lado.
-- Array `VARIATIONS` com as 6 entradas. Loop renderiza Base + 6.
-- Paleta fixa: `GREEN=#006039`, `CREAM=#F2EBD9`, `GOLD=#B8860B`.
+### 4. Sem mudança em
+- Swash dourado (`EagleSwash`) e tagline.
+- Tipografia, peso, tamanho, tracking, kerning.
+- Layout, header, grid, bordas douradas.
+- Demais páginas/rotas.
 
-Nenhum outro arquivo é modificado. Conceitos 1–8 atuais são descartados (substituídos pelo novo conteúdo de `/conceitos`).
+## Resultado esperado
+
+- Sobre creme: o nome ganha profundidade — verde quase preto com leve halo dourado, parecendo "gravado" no papel.
+- Sobre verde escuro: o creme fica mais branco-marfim com micro-halo, destacando os contornos do K e do A sem perder elegância.
+- Mantém estética serif refinada, sem stroke/outline pesado nem sombra projetada.

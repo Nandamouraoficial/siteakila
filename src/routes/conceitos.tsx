@@ -16,6 +16,15 @@ export const Route = createFileRoute("/conceitos")({
 const GREEN = "#006039";
 const CREAM = "#F2EBD9";
 const GOLD = "#B8860B";
+const GREEN_DEEP = "#00301C";
+const CREAM_BRIGHT = "#FBF6E8";
+
+type ShadowVariant = "onLight" | "onDark";
+const SHADOWS: Record<ShadowVariant, string> = {
+  onLight:
+    "0 0 1px rgba(184,134,11,0.35), 0 1px 0 rgba(0,48,28,0.25)",
+  onDark: "0 0 1px rgba(251,246,232,0.45)",
+};
 
 type TypographyProps = {
   font: string;
@@ -32,12 +41,9 @@ function Wordmark({
   spacing,
   italic,
   color,
-}: TypographyProps & { color: string }) {
-  // Tamanho responsivo: encolhe no mobile mas mantém o desktop equivalente ao definido.
-  // clamp(min, preferido, max) — min ≈ 62% do desktop para preservar legibilidade do K.
+  shadow,
+}: TypographyProps & { color: string; shadow?: ShadowVariant }) {
   const responsiveSize = `clamp(${Math.round(size * 0.62)}px, ${(size / 10).toFixed(2)}vw + ${Math.round(size * 0.45)}px, ${size}px)`;
-  // letter-spacing proporcional (em) — escala junto com o tamanho da fonte,
-  // evitando que o K "feche" no mobile.
   const spacingEm = `${(spacing / size).toFixed(3)}em`;
   return (
     <span
@@ -49,12 +55,11 @@ function Wordmark({
         fontStyle: italic ? "italic" : "normal",
         color,
         lineHeight: 1,
-        // garante kerning ativo e evita ligaduras que possam atenuar o K
         fontKerning: "normal",
         fontFeatureSettings: '"kern" 1, "liga" 0, "clig" 0',
-        // compensa o letter-spacing à direita para centralizar opticamente
         paddingLeft: spacingEm,
         whiteSpace: "nowrap",
+        textShadow: shadow ? SHADOWS[shadow] : undefined,
       }}
     >
       AKILA
@@ -117,14 +122,16 @@ function Lockup({
   typography,
   wordColor,
   accentColor,
+  shadow,
 }: {
   typography: TypographyProps;
   wordColor: string;
   accentColor: string;
+  shadow?: ShadowVariant;
 }) {
   return (
     <div className="flex flex-col items-center">
-      <Wordmark {...typography} color={wordColor} />
+      <Wordmark {...typography} color={wordColor} shadow={shadow} />
       <div style={{ marginTop: 14 }}>
         <EagleSwash color={accentColor} width={360} />
       </div>
@@ -241,10 +248,10 @@ function Block({
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2" style={{ border: `1px solid ${GOLD}` }}>
         <Stage bg={CREAM}>
-          <Lockup typography={typography} wordColor={GREEN} accentColor={GOLD} />
+          <Lockup typography={typography} wordColor={GREEN_DEEP} accentColor={GOLD} shadow="onLight" />
         </Stage>
         <Stage bg={GREEN}>
-          <Lockup typography={typography} wordColor={CREAM} accentColor={GOLD} />
+          <Lockup typography={typography} wordColor={CREAM_BRIGHT} accentColor={GOLD} shadow="onDark" />
         </Stage>
       </div>
     </section>
