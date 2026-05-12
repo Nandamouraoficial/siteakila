@@ -103,9 +103,11 @@ function Index() {
             <div className="mt-8 space-y-6 text-[17px] leading-[1.8] text-[var(--color-on-dark)]">
               <p>
                 26 anos de carreira em Coca-Cola, Cargill, Kraft Heinz, BRF,
-                Kimberly-Clark, Unilever, Amil e outras multinacionais. Liderou
-                times de até 800 pessoas e operações em 15 países. Passou por
-                gerência, diretoria e C-Level internacional para América Latina.
+                Kimberly-Clark, Itaú, Unilever, Amil e outras empresas. Liderou
+                times de até 800 pessoas e operações em 15 países, onde
+                gerenciou também projetos internacionais. Passou por supervisão,
+                gerência, diretoria e C-Level internacional para América Latina
+                e América Central.
               </p>
               <p>
                 Hoje ajuda executivos a decidirem o próximo movimento, executarem
