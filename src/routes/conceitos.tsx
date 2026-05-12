@@ -337,6 +337,29 @@ function Concept7({ wordColor, taglineColor, lineColor }: Props) {
   );
 }
 
+/* ============ CONCEITO 8 — Inicial A com Coroa ============ */
+function Concept8({ wordColor, taglineColor, lineColor }: Props) {
+  return (
+    <div className="flex flex-col items-center">
+      {/* Coroa minimalista — 5 pontos verticais, central mais alto, base contínua */}
+      <svg width="80" height="22" viewBox="0 0 80 22">
+        <line x1="10" y1="20" x2="10" y2="12" stroke={lineColor} strokeWidth="1.5" strokeLinecap="round" />
+        <line x1="25" y1="20" x2="25" y2="8" stroke={lineColor} strokeWidth="1.5" strokeLinecap="round" />
+        <line x1="40" y1="20" x2="40" y2="2" stroke={lineColor} strokeWidth="1.5" strokeLinecap="round" />
+        <line x1="55" y1="20" x2="55" y2="8" stroke={lineColor} strokeWidth="1.5" strokeLinecap="round" />
+        <line x1="70" y1="20" x2="70" y2="12" stroke={lineColor} strokeWidth="1.5" strokeLinecap="round" />
+        <line x1="6" y1="20" x2="74" y2="20" stroke={lineColor} strokeWidth="1.5" strokeLinecap="round" />
+      </svg>
+      <span style={{ ...serif, color: wordColor, fontSize: 52, fontWeight: 500, letterSpacing: 8, marginTop: 14 }}>
+        AKILA
+      </span>
+      <p style={{ ...sans, color: taglineColor, fontSize: 9, letterSpacing: 4, textTransform: "uppercase", marginTop: 10 }}>
+        Consultoria Executiva
+      </p>
+    </div>
+  );
+}
+
 const CONCEPTS = [
   { n: 1, name: "Dupla Linha com Movimento", Comp: Concept1 },
   { n: 2, name: "Dupla Linha com Diamante", Comp: Concept2 },
@@ -344,7 +367,8 @@ const CONCEPTS = [
   { n: 4, name: "Selo Circular Premium", Comp: Concept4 },
   { n: 5, name: "Monograma A Aberto + Wordmark", Comp: Concept5 },
   { n: 6, name: "Dupla Linha Encurtada com Autoridade", Comp: Concept6 },
-  { n: 7, name: "Traço Dourado Atravessando o Nome", Comp: Concept7 },
+  { n: 7, name: "Águia Atravessando o Nome", Comp: Concept7 },
+  { n: 8, name: "Inicial A com Coroa", Comp: Concept8 },
 ];
 
 function Stage({ bg, children }: { bg: string; children: React.ReactNode }) {
