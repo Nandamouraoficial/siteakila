@@ -186,9 +186,9 @@ function LogoFinalPage() {
             Logo Final — AKILA
           </h1>
           <p className="mt-3 text-neutral-600 max-w-2xl text-[14px] leading-relaxed">
-            Logo escolhido apresentado nas cores atuais do site (Esmeralda + Creme + Latão)
-            e em variações tipo brand book. A versão para fundos escuros tem o wordmark em
-            creme luminoso com halo, mantendo o swash dourado original.
+            Logo escolhido apresentado nas <strong>cores atuais do site</strong> (Esmeralda + Creme + Latão)
+            e em <strong>todas as cores do brand book Fernanda Moura</strong>. A versão para fundos
+            escuros tem o wordmark em creme luminoso com halo, mantendo o swash dourado original.
           </p>
         </header>
 
