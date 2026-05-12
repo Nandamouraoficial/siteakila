@@ -15,7 +15,7 @@ export function Navbar() {
           <img
             src={logoAkila}
             alt="Akila Consultoria Executiva"
-            className="h-10 md:h-12 w-auto object-contain"
+            className="h-12 sm:h-14 md:h-16 w-auto object-contain"
           />
         </Link>
 
@@ -94,7 +94,7 @@ export function Navbar() {
           />
           <div className="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-background p-6 overflow-y-auto">
             <div className="flex justify-between items-center mb-8">
-              <img src={logoAkila} alt="Akila Consultoria Executiva" className="h-9 w-auto object-contain" />
+              <img src={logoAkila} alt="Akila Consultoria Executiva" className="h-11 w-auto object-contain" />
               <button onClick={() => setMobileOpen(false)} aria-label="Fechar menu">
                 <X size={24} />
               </button>
