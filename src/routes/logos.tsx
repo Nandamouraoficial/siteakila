@@ -39,7 +39,32 @@ const OPTIONS = [
   {
     src: logo4,
     name: "Opção 4 — Águia silhueta moderna",
-    desc: "Silhueta geométrica reduzida ao essencial — asas em V angulares, presença imponente com radical simplicidade. Estilo emblema de maison contemporânea.",
+    desc: "Silhueta geométrica reduzida ao essencial — asas em V angulares, presença imponente com radical simplicidade.",
+  },
+  {
+    src: logo5,
+    name: "Opção 5 — Águia hairline acima",
+    desc: "Wordmark dominante em serifa esmeralda. Pequena águia em traço fino dourado paira acima como assinatura discreta.",
+  },
+  {
+    src: logo6,
+    name: "Opção 6 — Pena lateral",
+    desc: "Composição horizontal: pena dourada à esquerda, wordmark esmeralda. Referência sutil à águia através da pena.",
+  },
+  {
+    src: logo7,
+    name: "Opção 7 — Águia oculta no A",
+    desc: "Pequena águia dourada nichada no espaço negativo da letra A. Detalhe descoberto no segundo olhar.",
+  },
+  {
+    src: logo8,
+    name: "Opção 8 — Selo monograma",
+    desc: "Cabeça de águia em perfil sobre filete dourado, wordmark emoldurado por hairlines. Sensação de selo/carimbo editorial.",
+  },
+  {
+    src: logo9,
+    name: "Opção 9 — Águia caligráfica",
+    desc: "Traço fluido dourado atravessa o wordmark sugerindo a silhueta da águia em voo. Tipografia e símbolo integrados como um.",
   },
 ];
 
