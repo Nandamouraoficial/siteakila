@@ -11,13 +11,12 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-background border-b border-[var(--color-border)]">
       <div className="mx-auto max-w-6xl px-6 md:px-10 h-20 flex items-center justify-between">
-        <Link to="/" className="flex flex-col leading-none">
-          <span className="font-serif text-[26px] tracking-[0.25em] text-[var(--color-foreground)]">
-            AKILA
-          </span>
-          <span className="text-[12px] text-[var(--color-muted-foreground)] tracking-wider mt-0.5">
-            Consultoria
-          </span>
+        <Link to="/" className="flex items-center" aria-label="Akila Consultoria Executiva — Início">
+          <img
+            src={logoAkila}
+            alt="Akila Consultoria Executiva"
+            className="h-10 md:h-12 w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop nav */}
