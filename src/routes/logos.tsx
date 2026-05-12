@@ -9,6 +9,12 @@ import logo6 from "@/assets/logo-akila-option-6.png";
 import logo7 from "@/assets/logo-akila-option-7.png";
 import logo8 from "@/assets/logo-akila-option-8.png";
 import logo9 from "@/assets/logo-akila-option-9.png";
+import logo10 from "@/assets/logo-akila-option-10.png";
+import logo11 from "@/assets/logo-akila-option-11.png";
+import logo12 from "@/assets/logo-akila-option-12.png";
+import logo13 from "@/assets/logo-akila-option-13.png";
+import logo14 from "@/assets/logo-akila-option-14.png";
+import logo15 from "@/assets/logo-akila-option-15.png";
 
 export const Route = createFileRoute("/logos")({
   head: () => ({
@@ -65,6 +71,36 @@ const OPTIONS = [
     src: logo9,
     name: "Opção 9 — Águia caligráfica",
     desc: "Traço fluido dourado atravessa o wordmark sugerindo a silhueta da águia em voo. Tipografia e símbolo integrados como um.",
+  },
+  {
+    src: logo10,
+    name: "Opção 10 — Águia caligráfica abaixo",
+    desc: "Refinamento da #9: traço dourado fluido com águia em voo posicionado entre o wordmark e o subtítulo, sem cortar as letras.",
+  },
+  {
+    src: logo11,
+    name: "Opção 11 — Águia acima (selo)",
+    desc: "Águia geométrica dourada centralizada no topo, separada do wordmark esmeralda por um filete dourado fino. Composição vertical em três blocos.",
+  },
+  {
+    src: logo12,
+    name: "Opção 12 — Lockup horizontal",
+    desc: "Águia compacta dourada à esquerda, filete vertical separador, wordmark esmeralda à direita com subtítulo. Sensação de cabeçalho de papelaria premium.",
+  },
+  {
+    src: logo13,
+    name: "Opção 13 — Águia abaixo (assinatura)",
+    desc: "Wordmark dominante no topo, filete dourado, pequena águia em mostarda como selo no rodapé. Inversão da #11.",
+  },
+  {
+    src: logo14,
+    name: "Opção 14 — Asas envolvendo",
+    desc: "Duas asas finas em traço dourado abrem-se simetricamente ladeando o wordmark esmeralda — a tipografia é o corpo da águia.",
+  },
+  {
+    src: logo15,
+    name: "Opção 15 — Águia como inicial A",
+    desc: "A primeira letra A é substituída por uma águia geométrica dourada que mantém a forma triangular do A. Integração tipográfica radical.",
   },
 ];
 

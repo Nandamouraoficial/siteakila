@@ -1,29 +1,39 @@
 ## Objetivo
 
-Criar uma página `/logos` (similar a `/paletas`) onde você pode visualizar e comparar as 3 opções de logo da AKILA, cada uma exibida em **fundo claro (creme)** e **fundo escuro (verde esmeralda)**, lado a lado.
+Gerar **6 novas opções (10–15)** explorando combinações criativas entre o wordmark "AKILA" e a águia, variando a **posição da marca** (acima, atravessando, ao lado, abaixo) e o **tratamento gráfico** — todas elegantes, premium, high-ticket, com a águia integrada à tipografia em vez de competir com ela.
 
-Assim você decide qual opção desenvolver em variantes finais (PNG + SVG) antes de aplicá-la no Navbar e Footer.
+Adicionar tudo na página `/logos` para você comparar.
 
-## Alterações
+## As 6 direções
 
-**1. Novo arquivo: `src/routes/logos.tsx`**
+**Opção 10 — Águia integrada (refinamento da #9)**
+Traço caligráfico dourado fluido atravessa o wordmark sugerindo asas em voo, mas desta vez **sem cortar o subtítulo** e com o traço posicionado entre o wordmark e o subtítulo (não sobre as letras). Versão limpa, integrada.
 
-Página com:
-- Cabeçalho explicativo ("Escolha do logo — Akila")
-- Para cada uma das 3 opções (importadas de `src/assets/logo-akila-option-{1,2,3}.png`):
-  - Nome e descrição curta da direção
-  - Card com **fundo claro** (`#F2EBD9`) mostrando o logo
-  - Card com **fundo escuro** (`#006039`) mostrando o logo
-  - Variação em tamanho pequeno (altura ~40px, simulando uso no Navbar) e tamanho grande (~160px, uso em hero/footer)
+**Opção 11 — Águia acima, centralizada (selo)**
+Pequena águia geométrica em mostarda centralizada acima do wordmark esmeralda, separada por filete dourado horizontal fino. Composição vertical em três blocos: mark · rule · wordmark.
 
-**2. Sem outras mudanças**
+**Opção 12 — Águia ao lado esquerdo (lockup horizontal)**
+Águia compacta em mostarda à esquerda + filete vertical separador dourado + wordmark esmeralda à direita com subtítulo abaixo. Lockup horizontal premium tipo cabeçalho de papelaria.
 
-Não vou tocar em Navbar, Footer, styles.css nem nas outras páginas. A página `/logos` é apenas para visualização/decisão.
+**Opção 13 — Águia abaixo (assinatura)**
+Wordmark esmeralda dominante no topo + filete dourado fino + pequena águia em mostarda centralizada abaixo, como assinatura/selo no rodapé. Inversão da Opção 11.
 
-## Como acessar
+**Opção 14 — Asas envolvendo o wordmark**
+Duas asas finas em traço dourado abrem-se simetricamente ladeando o wordmark esmeralda (uma à esquerda, outra à direita), como se a tipografia fosse o corpo da águia. Composição protegida/heráldica.
 
-Após implementar, acesse `https://...lovable.app/logos` no preview.
+**Opção 15 — Águia como inicial "A"**
+A primeira letra "A" do wordmark é substituída por uma águia geométrica dourada estilizada que mantém a forma triangular do A. As demais letras "KILA" seguem em serifa esmeralda. Integração tipográfica radical.
 
-## Próximo passo (depois de você escolher)
+## Implementação
 
-Quando me disser "quero a opção X", eu gero as variantes finais (logo claro, logo escuro, versão horizontal e versão ícone) e aplico no Navbar e Footer.
+1. Gerar as 6 imagens em paralelo via `imagegen--generate_image` (premium, transparente, salvas em `src/assets/logo-akila-option-{10..15}.png`).
+2. Atualizar `src/routes/logos.tsx`:
+   - Adicionar os 6 novos imports.
+   - Adicionar as 6 entradas no array `OPTIONS` com nome e descrição.
+   - O layout de cards (fundo claro + fundo escuro) já existente cobre todas automaticamente.
+
+Nenhuma outra página é afetada.
+
+## Próximo passo
+
+Depois que você escolher a vencedora final, entrego variantes finais (PNG fundo claro / PNG fundo escuro / SVG) e aplico no Navbar e Footer.
