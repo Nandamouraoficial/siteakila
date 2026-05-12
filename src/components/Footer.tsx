@@ -14,7 +14,7 @@ export function Footer() {
             <img
               src={logoAkila}
               alt="Akila Consultoria Executiva"
-              className="h-16 w-auto object-contain mb-4 -ml-2"
+              className="h-16 md:h-20 w-auto object-contain mb-4 -ml-2"
             />
             <p className="font-serif text-[18px] text-[var(--color-on-dark)] leading-snug max-w-[220px]">
               Estratégia de carreira para quem já chegou longe.
