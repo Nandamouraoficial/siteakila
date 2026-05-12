@@ -49,6 +49,14 @@ const PALETAS: Palette[] = [
     textOnDark: "#F7F4EF",
     textOnLight: "#1A1A1A",
   },
+  {
+    name: "E · Esmeralda + Âmbar",
+    dark: "#1E4D3A",
+    light: "#F7F4EF",
+    gold: "#D4A847",
+    textOnDark: "#F7F4EF",
+    textOnLight: "#1A1A1A",
+  },
 ];
 
 const HEADLINE = "Você chegou longe. O próximo passo precisa ser certo.";
