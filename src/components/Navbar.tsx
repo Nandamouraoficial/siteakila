@@ -94,7 +94,7 @@ export function Navbar() {
           />
           <div className="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-background p-6 overflow-y-auto">
             <div className="flex justify-between items-center mb-8">
-              <span className="font-serif text-[22px] tracking-[0.2em]">AKILA</span>
+              <img src={logoAkila} alt="Akila Consultoria Executiva" className="h-9 w-auto object-contain" />
               <button onClick={() => setMobileOpen(false)} aria-label="Fechar menu">
                 <X size={24} />
               </button>
