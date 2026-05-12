@@ -16,6 +16,15 @@ export const Route = createFileRoute("/conceitos")({
 const GREEN = "#006039";
 const CREAM = "#F2EBD9";
 const GOLD = "#B8860B";
+const GREEN_DEEP = "#00301C";
+const CREAM_BRIGHT = "#FBF6E8";
+
+type ShadowVariant = "onLight" | "onDark";
+const SHADOWS: Record<ShadowVariant, string> = {
+  onLight:
+    "0 0 1px rgba(184,134,11,0.35), 0 1px 0 rgba(0,48,28,0.25)",
+  onDark: "0 0 1px rgba(251,246,232,0.45)",
+};
 
 type TypographyProps = {
   font: string;
