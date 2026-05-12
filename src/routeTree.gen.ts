@@ -9,8 +9,50 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ReposicionamentoRouteImport } from './routes/reposicionamento'
+import { Route as PalestranteRouteImport } from './routes/palestrante'
+import { Route as MentoriaNegociosRouteImport } from './routes/mentoria-negocios'
+import { Route as MentoriaExecutivaRouteImport } from './routes/mentoria-executiva'
+import { Route as ImersaoRouteImport } from './routes/imersao'
+import { Route as DiagnosticoRouteImport } from './routes/diagnostico'
+import { Route as ComunicadorRouteImport } from './routes/comunicador'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ReposicionamentoRoute = ReposicionamentoRouteImport.update({
+  id: '/reposicionamento',
+  path: '/reposicionamento',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PalestranteRoute = PalestranteRouteImport.update({
+  id: '/palestrante',
+  path: '/palestrante',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MentoriaNegociosRoute = MentoriaNegociosRouteImport.update({
+  id: '/mentoria-negocios',
+  path: '/mentoria-negocios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MentoriaExecutivaRoute = MentoriaExecutivaRouteImport.update({
+  id: '/mentoria-executiva',
+  path: '/mentoria-executiva',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImersaoRoute = ImersaoRouteImport.update({
+  id: '/imersao',
+  path: '/imersao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiagnosticoRoute = DiagnosticoRouteImport.update({
+  id: '/diagnostico',
+  path: '/diagnostico',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComunicadorRoute = ComunicadorRouteImport.update({
+  id: '/comunicador',
+  path: '/comunicador',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +61,130 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/comunicador': typeof ComunicadorRoute
+  '/diagnostico': typeof DiagnosticoRoute
+  '/imersao': typeof ImersaoRoute
+  '/mentoria-executiva': typeof MentoriaExecutivaRoute
+  '/mentoria-negocios': typeof MentoriaNegociosRoute
+  '/palestrante': typeof PalestranteRoute
+  '/reposicionamento': typeof ReposicionamentoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/comunicador': typeof ComunicadorRoute
+  '/diagnostico': typeof DiagnosticoRoute
+  '/imersao': typeof ImersaoRoute
+  '/mentoria-executiva': typeof MentoriaExecutivaRoute
+  '/mentoria-negocios': typeof MentoriaNegociosRoute
+  '/palestrante': typeof PalestranteRoute
+  '/reposicionamento': typeof ReposicionamentoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/comunicador': typeof ComunicadorRoute
+  '/diagnostico': typeof DiagnosticoRoute
+  '/imersao': typeof ImersaoRoute
+  '/mentoria-executiva': typeof MentoriaExecutivaRoute
+  '/mentoria-negocios': typeof MentoriaNegociosRoute
+  '/palestrante': typeof PalestranteRoute
+  '/reposicionamento': typeof ReposicionamentoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/comunicador'
+    | '/diagnostico'
+    | '/imersao'
+    | '/mentoria-executiva'
+    | '/mentoria-negocios'
+    | '/palestrante'
+    | '/reposicionamento'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/comunicador'
+    | '/diagnostico'
+    | '/imersao'
+    | '/mentoria-executiva'
+    | '/mentoria-negocios'
+    | '/palestrante'
+    | '/reposicionamento'
+  id:
+    | '__root__'
+    | '/'
+    | '/comunicador'
+    | '/diagnostico'
+    | '/imersao'
+    | '/mentoria-executiva'
+    | '/mentoria-negocios'
+    | '/palestrante'
+    | '/reposicionamento'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ComunicadorRoute: typeof ComunicadorRoute
+  DiagnosticoRoute: typeof DiagnosticoRoute
+  ImersaoRoute: typeof ImersaoRoute
+  MentoriaExecutivaRoute: typeof MentoriaExecutivaRoute
+  MentoriaNegociosRoute: typeof MentoriaNegociosRoute
+  PalestranteRoute: typeof PalestranteRoute
+  ReposicionamentoRoute: typeof ReposicionamentoRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/reposicionamento': {
+      id: '/reposicionamento'
+      path: '/reposicionamento'
+      fullPath: '/reposicionamento'
+      preLoaderRoute: typeof ReposicionamentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/palestrante': {
+      id: '/palestrante'
+      path: '/palestrante'
+      fullPath: '/palestrante'
+      preLoaderRoute: typeof PalestranteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mentoria-negocios': {
+      id: '/mentoria-negocios'
+      path: '/mentoria-negocios'
+      fullPath: '/mentoria-negocios'
+      preLoaderRoute: typeof MentoriaNegociosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mentoria-executiva': {
+      id: '/mentoria-executiva'
+      path: '/mentoria-executiva'
+      fullPath: '/mentoria-executiva'
+      preLoaderRoute: typeof MentoriaExecutivaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/imersao': {
+      id: '/imersao'
+      path: '/imersao'
+      fullPath: '/imersao'
+      preLoaderRoute: typeof ImersaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diagnostico': {
+      id: '/diagnostico'
+      path: '/diagnostico'
+      fullPath: '/diagnostico'
+      preLoaderRoute: typeof DiagnosticoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comunicador': {
+      id: '/comunicador'
+      path: '/comunicador'
+      fullPath: '/comunicador'
+      preLoaderRoute: typeof ComunicadorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,7 +197,24 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ComunicadorRoute: ComunicadorRoute,
+  DiagnosticoRoute: DiagnosticoRoute,
+  ImersaoRoute: ImersaoRoute,
+  MentoriaExecutivaRoute: MentoriaExecutivaRoute,
+  MentoriaNegociosRoute: MentoriaNegociosRoute,
+  PalestranteRoute: PalestranteRoute,
+  ReposicionamentoRoute: ReposicionamentoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
