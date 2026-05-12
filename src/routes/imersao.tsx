@@ -228,10 +228,6 @@ function ImersaoPage() {
           </FadeIn>
         </div>
       </Section>
-
-      {/* unused setter to avoid lint warn — placeholder for future analytics */}
-      <span className="hidden">{String(modal)}</span>
-      <span className="hidden" onClick={() => setModal(false)} />
     </>
   );
 }
