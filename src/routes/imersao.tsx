@@ -52,8 +52,6 @@ const MOMENTOS = [
 ];
 
 function ImersaoPage() {
-  const [modal, setModal] = useState(false);
-
   return (
     <>
       {!IMERSAO_ATIVA && (
