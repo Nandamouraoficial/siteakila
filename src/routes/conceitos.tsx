@@ -278,10 +278,10 @@ function ConceitosPage() {
     <div style={{ background: CREAM, minHeight: "100vh" }}>
       <div className="mx-auto max-w-6xl px-6 md:px-10 py-16">
         <header className="mb-14">
-          <p style={{ ...sans, color: GOLD, fontSize: 11, letterSpacing: 4, textTransform: "uppercase" }}>
+          <p style={{ ...sans, color: GOLD, fontSize: 11, letterSpacing: 4, textTransform: "uppercase", fontWeight: 600, textShadow: GOLD_SHADOWS.onLight }}>
             Direção de marca
           </p>
-          <h1 style={{ ...serif, color: GREEN, fontSize: 48, fontWeight: 500, marginTop: 10, letterSpacing: 2 }}>
+          <h1 style={{ ...serif, color: GREEN_DEEP, fontSize: 48, fontWeight: 600, marginTop: 10, letterSpacing: 2, textShadow: WORD_SHADOWS.onLight }}>
             AKILA — Estudo Tipográfico
           </h1>
           <p style={{ ...sans, color: "#444", marginTop: 12, maxWidth: 640, fontSize: 14, lineHeight: 1.6 }}>
