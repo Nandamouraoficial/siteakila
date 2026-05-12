@@ -157,7 +157,7 @@ function Stage({ bg, children }: { bg: string; children: React.ReactNode }) {
 
 const BASE: TypographyProps = {
   font: "'Cormorant Garamond', serif",
-  weight: 600,
+  weight: 700,
   size: 56,
   spacing: 16,
 };
