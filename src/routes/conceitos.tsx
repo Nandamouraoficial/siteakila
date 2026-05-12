@@ -66,7 +66,7 @@ function Wordmark({
         fontFeatureSettings: '"kern" 1, "liga" 0, "clig" 0',
         paddingLeft: spacingEm,
         whiteSpace: "nowrap",
-        textShadow: shadow ? SHADOWS[shadow] : undefined,
+        textShadow: shadow ? WORD_SHADOWS[shadow] : undefined,
       }}
     >
       AKILA
