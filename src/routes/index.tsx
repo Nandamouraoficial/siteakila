@@ -152,19 +152,19 @@ function Index() {
       {/* DEPOIMENTOS */}
       <Section variant="dark">
         <FadeIn>
-          <h2 className="text-center mb-16 text-[var(--color-gold)]">O que dizem</h2>
+          <h2 className="text-center mb-16 text-[var(--color-gold-on-dark)]">O que dizem</h2>
         </FadeIn>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {TESTIMONIALS.map((t, i) => (
             <FadeIn key={i} delay={i * 100}>
-              <div className="border-t border-[var(--color-gold)] pt-6">
-                <p className="font-serif text-[48px] text-[var(--color-gold)] leading-none">
+              <div className="border-t border-[var(--color-gold-on-dark)] pt-6">
+                <p className="font-serif text-[48px] text-[var(--color-gold-on-dark)] leading-none">
                   &ldquo;
                 </p>
                 <p className="text-[16px] italic leading-relaxed text-[var(--color-on-dark)]">
                   {t.quote}
                 </p>
-                <p className="mt-6 text-[14px] text-[var(--color-gold)]">
+                <p className="mt-6 text-[14px] text-[var(--color-gold-on-dark)]">
                   {t.author} · {t.role} · {t.company}
                 </p>
               </div>
