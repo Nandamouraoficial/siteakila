@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { PRODUCTS, SOCIAL } from "@/lib/site-config";
+import logoAkila from "@/assets/logo-akila-v2-on-dark.png";
 
 export function Footer() {
   return (
@@ -10,9 +11,11 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-6 md:px-10 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-1">
-            <p className="font-serif text-[28px] tracking-[0.25em] text-[var(--color-gold-on-dark)] mb-3">
-              AKILA
-            </p>
+            <img
+              src={logoAkila}
+              alt="Akila Consultoria Executiva"
+              className="h-16 w-auto object-contain mb-4 -ml-2"
+            />
             <p className="font-serif text-[18px] text-[var(--color-on-dark)] leading-snug max-w-[220px]">
               Estratégia de carreira para quem já chegou longe.
             </p>
