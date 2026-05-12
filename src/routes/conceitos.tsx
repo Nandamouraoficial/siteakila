@@ -139,10 +139,12 @@ function Lockup({
         style={{
           fontFamily: "'Inter', sans-serif",
           color: accentColor,
-          fontSize: 10,
+          fontSize: 11,
+          fontWeight: 600,
           letterSpacing: 5,
           textTransform: "uppercase",
           marginTop: 14,
+          textShadow: shadow === "onDark" ? "0 0 1px rgba(184,134,11,0.5)" : undefined,
         }}
       >
         Consultoria Executiva
