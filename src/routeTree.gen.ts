@@ -14,6 +14,7 @@ import { Route as PaletasRouteImport } from './routes/paletas'
 import { Route as PalestranteRouteImport } from './routes/palestrante'
 import { Route as MentoriaNegociosRouteImport } from './routes/mentoria-negocios'
 import { Route as MentoriaExecutivaRouteImport } from './routes/mentoria-executiva'
+import { Route as LogosRouteImport } from './routes/logos'
 import { Route as ImersaoRouteImport } from './routes/imersao'
 import { Route as DiagnosticoRouteImport } from './routes/diagnostico'
 import { Route as ComunicadorRouteImport } from './routes/comunicador'
@@ -44,6 +45,11 @@ const MentoriaExecutivaRoute = MentoriaExecutivaRouteImport.update({
   path: '/mentoria-executiva',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LogosRoute = LogosRouteImport.update({
+  id: '/logos',
+  path: '/logos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ImersaoRoute = ImersaoRouteImport.update({
   id: '/imersao',
   path: '/imersao',
@@ -70,6 +76,7 @@ export interface FileRoutesByFullPath {
   '/comunicador': typeof ComunicadorRoute
   '/diagnostico': typeof DiagnosticoRoute
   '/imersao': typeof ImersaoRoute
+  '/logos': typeof LogosRoute
   '/mentoria-executiva': typeof MentoriaExecutivaRoute
   '/mentoria-negocios': typeof MentoriaNegociosRoute
   '/palestrante': typeof PalestranteRoute
@@ -81,6 +88,7 @@ export interface FileRoutesByTo {
   '/comunicador': typeof ComunicadorRoute
   '/diagnostico': typeof DiagnosticoRoute
   '/imersao': typeof ImersaoRoute
+  '/logos': typeof LogosRoute
   '/mentoria-executiva': typeof MentoriaExecutivaRoute
   '/mentoria-negocios': typeof MentoriaNegociosRoute
   '/palestrante': typeof PalestranteRoute
@@ -93,6 +101,7 @@ export interface FileRoutesById {
   '/comunicador': typeof ComunicadorRoute
   '/diagnostico': typeof DiagnosticoRoute
   '/imersao': typeof ImersaoRoute
+  '/logos': typeof LogosRoute
   '/mentoria-executiva': typeof MentoriaExecutivaRoute
   '/mentoria-negocios': typeof MentoriaNegociosRoute
   '/palestrante': typeof PalestranteRoute
@@ -106,6 +115,7 @@ export interface FileRouteTypes {
     | '/comunicador'
     | '/diagnostico'
     | '/imersao'
+    | '/logos'
     | '/mentoria-executiva'
     | '/mentoria-negocios'
     | '/palestrante'
@@ -117,6 +127,7 @@ export interface FileRouteTypes {
     | '/comunicador'
     | '/diagnostico'
     | '/imersao'
+    | '/logos'
     | '/mentoria-executiva'
     | '/mentoria-negocios'
     | '/palestrante'
@@ -128,6 +139,7 @@ export interface FileRouteTypes {
     | '/comunicador'
     | '/diagnostico'
     | '/imersao'
+    | '/logos'
     | '/mentoria-executiva'
     | '/mentoria-negocios'
     | '/palestrante'
@@ -140,6 +152,7 @@ export interface RootRouteChildren {
   ComunicadorRoute: typeof ComunicadorRoute
   DiagnosticoRoute: typeof DiagnosticoRoute
   ImersaoRoute: typeof ImersaoRoute
+  LogosRoute: typeof LogosRoute
   MentoriaExecutivaRoute: typeof MentoriaExecutivaRoute
   MentoriaNegociosRoute: typeof MentoriaNegociosRoute
   PalestranteRoute: typeof PalestranteRoute
@@ -184,6 +197,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MentoriaExecutivaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/logos': {
+      id: '/logos'
+      path: '/logos'
+      fullPath: '/logos'
+      preLoaderRoute: typeof LogosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/imersao': {
       id: '/imersao'
       path: '/imersao'
@@ -220,6 +240,7 @@ const rootRouteChildren: RootRouteChildren = {
   ComunicadorRoute: ComunicadorRoute,
   DiagnosticoRoute: DiagnosticoRoute,
   ImersaoRoute: ImersaoRoute,
+  LogosRoute: LogosRoute,
   MentoriaExecutivaRoute: MentoriaExecutivaRoute,
   MentoriaNegociosRoute: MentoriaNegociosRoute,
   PalestranteRoute: PalestranteRoute,
@@ -229,3 +250,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
