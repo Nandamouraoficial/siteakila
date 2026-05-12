@@ -20,14 +20,17 @@ const GREEN_DEEP = "#00301C";
 const CREAM_BRIGHT = "#FBF6E8";
 
 type ShadowVariant = "onLight" | "onDark";
-const SHADOWS: Record<ShadowVariant, string> = {
-  onLight:
-    "0 0 1px rgba(184,134,11,0.35), 0 1px 0 rgba(0,48,28,0.25)",
-  onDark: "0 0 1px rgba(251,246,232,0.45)",
+const WORD_SHADOWS: Record<ShadowVariant, string> = {
+  onLight: "0 0 0.6px rgba(0,48,28,0.55), 0 1px 0 rgba(0,48,28,0.22)",
+  onDark: "0 0 0.6px rgba(251,246,232,0.85), 0 0 8px rgba(251,246,232,0.18)",
 };
-const TAGLINE_SHADOWS: Record<ShadowVariant, string> = {
+const GOLD_SHADOWS: Record<ShadowVariant, string> = {
   onLight: "0 0 0.5px rgba(139,99,8,0.9), 0 1px 0 rgba(0,48,28,0.18)",
   onDark: "0 0 0.5px rgba(184,134,11,0.95), 0 0 6px rgba(184,134,11,0.25)",
+};
+const SWASH_FILTERS: Record<ShadowVariant, string> = {
+  onLight: "drop-shadow(0 0 0.6px rgba(184,134,11,0.55)) drop-shadow(0 1px 0 rgba(0,48,28,0.15))",
+  onDark: "drop-shadow(0 0 0.6px rgba(184,134,11,0.9)) drop-shadow(0 0 4px rgba(184,134,11,0.3))",
 };
 
 type TypographyProps = {
@@ -63,7 +66,7 @@ function Wordmark({
         fontFeatureSettings: '"kern" 1, "liga" 0, "clig" 0',
         paddingLeft: spacingEm,
         whiteSpace: "nowrap",
-        textShadow: shadow ? SHADOWS[shadow] : undefined,
+        textShadow: shadow ? WORD_SHADOWS[shadow] : undefined,
       }}
     >
       AKILA
@@ -76,12 +79,18 @@ function Wordmark({
  * com leve queda nas pontas (lembra asas abertas / águia em voo estilizada).
  * Pequeno detalhe central com a cabeça/bico discreto.
  */
-function EagleSwash({ color, width = 340 }: { color: string; width?: number }) {
+function EagleSwash({ color, width = 340, shadow }: { color: string; width?: number; shadow?: ShadowVariant }) {
   const H = 28;
   const W = width;
   const cx = W / 2;
   return (
-    <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} aria-hidden>
+    <svg
+      width={W}
+      height={H}
+      viewBox={`0 0 ${W} ${H}`}
+      aria-hidden
+      style={{ filter: shadow ? SWASH_FILTERS[shadow] : undefined }}
+    >
       {/* Asa esquerda — curva entra pela borda, sobe ao centro */}
       <path
         d={`M 6 18
@@ -137,7 +146,7 @@ function Lockup({
     <div className="flex flex-col items-center">
       <Wordmark {...typography} color={wordColor} shadow={shadow} />
       <div style={{ marginTop: 14 }}>
-        <EagleSwash color={accentColor} width={360} />
+        <EagleSwash color={accentColor} width={360} shadow={shadow} />
       </div>
       <p
         style={{
@@ -148,7 +157,7 @@ function Lockup({
           letterSpacing: 5,
           textTransform: "uppercase",
           marginTop: 14,
-          textShadow: shadow ? TAGLINE_SHADOWS[shadow] : undefined,
+          textShadow: shadow ? GOLD_SHADOWS[shadow] : undefined,
         }}
       >
         Consultoria Executiva
@@ -231,7 +240,7 @@ function Block({
   return (
     <section style={{ borderBottom: `1px solid ${GOLD}`, padding: "40px 0" }}>
       <div className="mb-6 flex items-baseline gap-4 flex-wrap">
-        <span style={{ ...serif, color: GOLD, fontSize: 32, fontWeight: 500, lineHeight: 1 }}>
+        <span style={{ ...serif, color: GOLD, fontSize: 32, fontWeight: 500, lineHeight: 1, textShadow: GOLD_SHADOWS.onLight }}>
           {number}
         </span>
         <h2 style={{ ...serif, color: GREEN, fontSize: 24, fontWeight: 500, lineHeight: 1 }}>
@@ -269,10 +278,10 @@ function ConceitosPage() {
     <div style={{ background: CREAM, minHeight: "100vh" }}>
       <div className="mx-auto max-w-6xl px-6 md:px-10 py-16">
         <header className="mb-14">
-          <p style={{ ...sans, color: GOLD, fontSize: 11, letterSpacing: 4, textTransform: "uppercase" }}>
+          <p style={{ ...sans, color: GOLD, fontSize: 11, letterSpacing: 4, textTransform: "uppercase", fontWeight: 600, textShadow: GOLD_SHADOWS.onLight }}>
             Direção de marca
           </p>
-          <h1 style={{ ...serif, color: GREEN, fontSize: 48, fontWeight: 500, marginTop: 10, letterSpacing: 2 }}>
+          <h1 style={{ ...serif, color: GREEN_DEEP, fontSize: 48, fontWeight: 600, marginTop: 10, letterSpacing: 2, textShadow: WORD_SHADOWS.onLight }}>
             AKILA — Estudo Tipográfico
           </h1>
           <p style={{ ...sans, color: "#444", marginTop: 12, maxWidth: 640, fontSize: 14, lineHeight: 1.6 }}>
