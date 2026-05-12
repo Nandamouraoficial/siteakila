@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { CALENDLY_URL, PRODUCTS } from "@/lib/site-config";
+import logoAkila from "@/assets/logo-akila-v2.png";
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
