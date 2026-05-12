@@ -17,6 +17,7 @@ import { Route as MentoriaExecutivaRouteImport } from './routes/mentoria-executi
 import { Route as LogosRouteImport } from './routes/logos'
 import { Route as ImersaoRouteImport } from './routes/imersao'
 import { Route as DiagnosticoRouteImport } from './routes/diagnostico'
+import { Route as ConceitosRouteImport } from './routes/conceitos'
 import { Route as ComunicadorRouteImport } from './routes/comunicador'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -60,6 +61,11 @@ const DiagnosticoRoute = DiagnosticoRouteImport.update({
   path: '/diagnostico',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ConceitosRoute = ConceitosRouteImport.update({
+  id: '/conceitos',
+  path: '/conceitos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ComunicadorRoute = ComunicadorRouteImport.update({
   id: '/comunicador',
   path: '/comunicador',
@@ -74,6 +80,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/comunicador': typeof ComunicadorRoute
+  '/conceitos': typeof ConceitosRoute
   '/diagnostico': typeof DiagnosticoRoute
   '/imersao': typeof ImersaoRoute
   '/logos': typeof LogosRoute
@@ -86,6 +93,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/comunicador': typeof ComunicadorRoute
+  '/conceitos': typeof ConceitosRoute
   '/diagnostico': typeof DiagnosticoRoute
   '/imersao': typeof ImersaoRoute
   '/logos': typeof LogosRoute
@@ -99,6 +107,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/comunicador': typeof ComunicadorRoute
+  '/conceitos': typeof ConceitosRoute
   '/diagnostico': typeof DiagnosticoRoute
   '/imersao': typeof ImersaoRoute
   '/logos': typeof LogosRoute
@@ -113,6 +122,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/comunicador'
+    | '/conceitos'
     | '/diagnostico'
     | '/imersao'
     | '/logos'
@@ -125,6 +135,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/comunicador'
+    | '/conceitos'
     | '/diagnostico'
     | '/imersao'
     | '/logos'
@@ -137,6 +148,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/comunicador'
+    | '/conceitos'
     | '/diagnostico'
     | '/imersao'
     | '/logos'
@@ -150,6 +162,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ComunicadorRoute: typeof ComunicadorRoute
+  ConceitosRoute: typeof ConceitosRoute
   DiagnosticoRoute: typeof DiagnosticoRoute
   ImersaoRoute: typeof ImersaoRoute
   LogosRoute: typeof LogosRoute
@@ -218,6 +231,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DiagnosticoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/conceitos': {
+      id: '/conceitos'
+      path: '/conceitos'
+      fullPath: '/conceitos'
+      preLoaderRoute: typeof ConceitosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/comunicador': {
       id: '/comunicador'
       path: '/comunicador'
@@ -238,6 +258,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ComunicadorRoute: ComunicadorRoute,
+  ConceitosRoute: ConceitosRoute,
   DiagnosticoRoute: DiagnosticoRoute,
   ImersaoRoute: ImersaoRoute,
   LogosRoute: LogosRoute,
