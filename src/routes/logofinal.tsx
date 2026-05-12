@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import logoLight from "@/assets/logo-akila-final.png";
-import logoDark from "@/assets/logo-akila-final-on-dark.png";
+import logoLight from "@/assets/logo-akila-v2.png";
+import logoDark from "@/assets/logo-akila-v2-on-dark.png";
 
 export const Route = createFileRoute("/logofinal")({
   head: () => ({
