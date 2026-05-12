@@ -31,6 +31,11 @@ const OPTIONS = [
     name: "Opção 3 — Emblema circular",
     desc: "Medalhão com águia centralizada e texto circular. Heráldico, tradicional, estilo Rolex.",
   },
+  {
+    src: logo4,
+    name: "Opção 4 — Águia silhueta moderna",
+    desc: "Silhueta geométrica reduzida ao essencial — asas em V angulares, presença imponente com radical simplicidade. Estilo emblema de maison contemporânea.",
+  },
 ];
 
 function LogoCard({
