@@ -10,7 +10,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-6 md:px-10 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-1">
-            <p className="font-serif text-[28px] tracking-[0.25em] text-[var(--color-gold)] mb-3">
+            <p className="font-serif text-[28px] tracking-[0.25em] text-[var(--color-gold-on-dark)] mb-3">
               AKILA
             </p>
             <p className="font-serif text-[18px] text-[var(--color-on-dark)] leading-snug max-w-[220px]">
@@ -19,13 +19,13 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="supratitle mb-4 text-[var(--color-gold)]">Serviços</p>
+            <p className="supratitle mb-4 text-[var(--color-gold-on-dark)]">Serviços</p>
             <ul className="space-y-2.5">
               {PRODUCTS.map((p) => (
                 <li key={p.to}>
                   <Link
                     to={p.to}
-                    className="text-[14px] text-[var(--color-on-dark)]/80 hover:text-[var(--color-gold)] transition-colors"
+                    className="text-[14px] text-[var(--color-on-dark)]/80 hover:text-[var(--color-gold-on-dark)] transition-colors"
                   >
                     {p.short}
                   </Link>
@@ -35,12 +35,12 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="supratitle mb-4 text-[var(--color-gold)]">Fernanda Moura</p>
+            <p className="supratitle mb-4 text-[var(--color-gold-on-dark)]">Fernanda Moura</p>
             <ul className="space-y-2.5 text-[14px] text-[var(--color-on-dark)]/80">
               <li>26 anos de carreira executiva</li>
               <li>C-Level América Latina</li>
               <li>
-                <Link to="/" className="hover:text-[var(--color-gold)] transition-colors">
+                <Link to="/" className="hover:text-[var(--color-gold-on-dark)] transition-colors">
                   Sobre a Fernanda
                 </Link>
               </li>
@@ -48,14 +48,14 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="supratitle mb-4 text-[var(--color-gold)]">Contato</p>
+            <p className="supratitle mb-4 text-[var(--color-gold-on-dark)]">Contato</p>
             <ul className="space-y-2.5 text-[14px] text-[var(--color-on-dark)]/80">
               <li>
                 <a
                   href={SOCIAL.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[var(--color-gold)] transition-colors"
+                  className="hover:text-[var(--color-gold-on-dark)] transition-colors"
                 >
                   LinkedIn
                 </a>
@@ -65,7 +65,7 @@ export function Footer() {
                   href={SOCIAL.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[var(--color-gold)] transition-colors"
+                  className="hover:text-[var(--color-gold-on-dark)] transition-colors"
                 >
                   @nandamouraoficial
                 </a>
@@ -73,7 +73,7 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${SOCIAL.email}`}
-                  className="hover:text-[var(--color-gold)] transition-colors break-all"
+                  className="hover:text-[var(--color-gold-on-dark)] transition-colors break-all"
                 >
                   {SOCIAL.email}
                 </a>
