@@ -19,7 +19,7 @@ type Palette = {
 };
 
 const PALETTES: Palette[] = [
-  // ATUAL (cores do site)
+  // ATUAL (cores do site /conceitos)
   {
     name: "Atual · Creme Harrods",
     bg: "#F2EBD9",
@@ -37,54 +37,86 @@ const PALETTES: Palette[] = [
     note: "Como aparece no site hoje",
   },
 
-  // VARIAÇÕES BRAND BOOK
+  // BRAND BOOK Fernanda Moura — paleta oficial
   {
-    name: "Preto absoluto + Ouro",
-    bg: "#0A0A0A",
+    name: "Light Blue",
+    bg: "#14B9DA",
     variant: "dark",
     source: "Brand book",
-    swatches: ["#0A0A0A", "#F5EFE0", "#C9A14A"],
-    note: "Luxury clássico (Cartier / Rolls-Royce)",
+    swatches: ["#14B9DA", "#FFFFFF", "#00859E"],
+    note: "Brand cor primária 1",
   },
   {
-    name: "Marfim + Esmeralda",
-    bg: "#FBF6E8",
+    name: "Sea Blue",
+    bg: "#00859E",
+    variant: "dark",
+    source: "Brand book",
+    swatches: ["#00859E", "#FFFFFF", "#14B9DA"],
+    note: "Brand cor primária 2",
+  },
+  {
+    name: "Purple Shiny",
+    bg: "#593199",
+    variant: "dark",
+    source: "Brand book",
+    swatches: ["#593199", "#FFFFFF", "#864765"],
+    note: "Brand cor secundária",
+  },
+  {
+    name: "Grape",
+    bg: "#864765",
+    variant: "dark",
+    source: "Brand book",
+    swatches: ["#864765", "#FFFFFF", "#E4817F"],
+    note: "Brand cor secundária",
+  },
+  {
+    name: "Salmon",
+    bg: "#E4817F",
     variant: "light",
     source: "Brand book",
-    swatches: ["#FBF6E8", "#0F4D33", "#B8860B"],
-    note: "Editorial / papelaria fina",
+    swatches: ["#E4817F", "#912626", "#FFFFFF"],
+    note: "Brand cor de destaque",
   },
   {
-    name: "Off-white + Esmeralda",
+    name: "Wine",
+    bg: "#912626",
+    variant: "dark",
+    source: "Brand book",
+    swatches: ["#912626", "#FFFFFF", "#E4817F"],
+    note: "Brand cor de destaque",
+  },
+  {
+    name: "White",
     bg: "#FFFFFF",
     variant: "light",
     source: "Brand book",
-    swatches: ["#FFFFFF", "#006039", "#B8860B"],
-    note: "Aplicação digital / favicon",
+    swatches: ["#FFFFFF", "#000000", "#A6A8AB"],
+    note: "Brand neutra",
   },
   {
-    name: "Verde profundo + Champagne",
-    bg: "#003724",
-    variant: "dark",
-    source: "Brand book",
-    swatches: ["#003724", "#EADBB7", "#D4B872"],
-    note: "Tom mais formal e calmo",
-  },
-  {
-    name: "Bege papel + Carvão",
-    bg: "#E8DFC8",
+    name: "Cool Grey",
+    bg: "#E6E7E8",
     variant: "light",
     source: "Brand book",
-    swatches: ["#E8DFC8", "#1A1A1A", "#9B7A2E"],
-    note: "Print / cartão de visita",
+    swatches: ["#E6E7E8", "#000000", "#A6A8AB"],
+    note: "Brand neutra",
   },
   {
-    name: "Esmeralda + Dourado pleno",
-    bg: "#006039",
+    name: "Deep Grey",
+    bg: "#A6A8AB",
+    variant: "light",
+    source: "Brand book",
+    swatches: ["#A6A8AB", "#000000", "#FFFFFF"],
+    note: "Brand neutra",
+  },
+  {
+    name: "Black",
+    bg: "#000000",
     variant: "dark",
     source: "Brand book",
-    swatches: ["#006039", "#E8C870", "#E8C870"],
-    note: "Monocromático dourado",
+    swatches: ["#000000", "#FFFFFF", "#A6A8AB"],
+    note: "Brand neutra",
   },
 ];
 
