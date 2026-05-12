@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { CALENDLY_URL, PRODUCTS } from "@/lib/site-config";
+import logoAkila from "@/assets/logo-akila-v2.png";
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -10,13 +11,12 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-background border-b border-[var(--color-border)]">
       <div className="mx-auto max-w-6xl px-6 md:px-10 h-20 flex items-center justify-between">
-        <Link to="/" className="flex flex-col leading-none">
-          <span className="font-serif text-[26px] tracking-[0.25em] text-[var(--color-foreground)]">
-            AKILA
-          </span>
-          <span className="text-[12px] text-[var(--color-muted-foreground)] tracking-wider mt-0.5">
-            Consultoria
-          </span>
+        <Link to="/" className="flex items-center" aria-label="Akila Consultoria Executiva — Início">
+          <img
+            src={logoAkila}
+            alt="Akila Consultoria Executiva"
+            className="h-10 md:h-12 w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -94,7 +94,7 @@ export function Navbar() {
           />
           <div className="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-background p-6 overflow-y-auto">
             <div className="flex justify-between items-center mb-8">
-              <span className="font-serif text-[22px] tracking-[0.2em]">AKILA</span>
+              <img src={logoAkila} alt="Akila Consultoria Executiva" className="h-9 w-auto object-contain" />
               <button onClick={() => setMobileOpen(false)} aria-label="Fechar menu">
                 <X size={24} />
               </button>
