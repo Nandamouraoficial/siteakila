@@ -248,10 +248,10 @@ function Block({
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2" style={{ border: `1px solid ${GOLD}` }}>
         <Stage bg={CREAM}>
-          <Lockup typography={typography} wordColor={GREEN} accentColor={GOLD} />
+          <Lockup typography={typography} wordColor={GREEN_DEEP} accentColor={GOLD} shadow="onLight" />
         </Stage>
         <Stage bg={GREEN}>
-          <Lockup typography={typography} wordColor={CREAM} accentColor={GOLD} />
+          <Lockup typography={typography} wordColor={CREAM_BRIGHT} accentColor={GOLD} shadow="onDark" />
         </Stage>
       </div>
     </section>
