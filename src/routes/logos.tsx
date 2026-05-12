@@ -4,6 +4,11 @@ import logo1GreenGold from "@/assets/logo-akila-option-1-green-gold.png";
 import logo2 from "@/assets/logo-akila-option-2.png";
 import logo3 from "@/assets/logo-akila-option-3.png";
 import logo4 from "@/assets/logo-akila-option-4.png";
+import logo5 from "@/assets/logo-akila-option-5.png";
+import logo6 from "@/assets/logo-akila-option-6.png";
+import logo7 from "@/assets/logo-akila-option-7.png";
+import logo8 from "@/assets/logo-akila-option-8.png";
+import logo9 from "@/assets/logo-akila-option-9.png";
 
 export const Route = createFileRoute("/logos")({
   head: () => ({
