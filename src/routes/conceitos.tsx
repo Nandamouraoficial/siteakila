@@ -277,17 +277,34 @@ function Concept7({ wordColor, taglineColor, lineColor }: Props) {
           viewBox={`0 0 ${W} ${H}`}
           style={{ position: "absolute", inset: 0, zIndex: 0 }}
         >
-          {/* curva fluida horizontal centro vertical = H/2 = 45 */}
+          {/* Águia monolinha atravessando o nome — centro vertical ≈ 48
+              Asa esquerda entra pela borda, sobe ao topo da asa, desce ao corpo,
+              sobe novamente para a asa direita e sai com leve curvatura ascendente. */}
           <path
-            d={`M 0 48
-                C 60 48, 90 56, 130 54
-                C 170 52, 200 38, 240 40
-                C 280 42, 310 52, 350 50
-                C 390 48, 420 42, 460 34
-                C 470 32, 478 30, ${W} 28`}
+            d={`M 10 56
+                C 60 50, 100 30, 150 34
+                C 185 36, 215 50, 240 50
+                C 265 50, 295 36, 330 34
+                C 380 30, 420 44, ${W - 10} 30`}
             fill="none"
             stroke={lineColor}
             strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          {/* Cabeça/bico — pequeno triângulo voltado à direita, no centro do corpo */}
+          <polygon
+            points={`${W / 2 - 1},48 ${W / 2 + 7},50 ${W / 2 - 1},52`}
+            fill={lineColor}
+          />
+          {/* Cauda — traço curto descendo do corpo */}
+          <line
+            x1={W / 2}
+            y1="50"
+            x2={W / 2 - 10}
+            y2="62"
+            stroke={lineColor}
+            strokeWidth="1.2"
             strokeLinecap="round"
           />
         </svg>
