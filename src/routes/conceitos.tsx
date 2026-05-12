@@ -79,12 +79,18 @@ function Wordmark({
  * com leve queda nas pontas (lembra asas abertas / águia em voo estilizada).
  * Pequeno detalhe central com a cabeça/bico discreto.
  */
-function EagleSwash({ color, width = 340 }: { color: string; width?: number }) {
+function EagleSwash({ color, width = 340, shadow }: { color: string; width?: number; shadow?: ShadowVariant }) {
   const H = 28;
   const W = width;
   const cx = W / 2;
   return (
-    <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} aria-hidden>
+    <svg
+      width={W}
+      height={H}
+      viewBox={`0 0 ${W} ${H}`}
+      aria-hidden
+      style={{ filter: shadow ? SWASH_FILTERS[shadow] : undefined }}
+    >
       {/* Asa esquerda — curva entra pela borda, sobe ao centro */}
       <path
         d={`M 6 18
