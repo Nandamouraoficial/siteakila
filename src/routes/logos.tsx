@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import logo1 from "@/assets/logo-akila-option-1.png";
+import logo1GreenGold from "@/assets/logo-akila-option-1-green-gold.png";
 import logo2 from "@/assets/logo-akila-option-2.png";
 import logo3 from "@/assets/logo-akila-option-3.png";
 
