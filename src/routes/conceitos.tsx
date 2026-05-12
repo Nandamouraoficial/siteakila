@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/conceitos")({
   head: () => ({
-    meta: [{ title: "8 Conceitos de Logo — Akila" }],
+    meta: [{ title: "Conceitos de Logo — Akila" }],
     links: [
       {
         rel: "stylesheet",
@@ -20,59 +20,216 @@ const GOLD = "#B8860B";
 const serif = { fontFamily: "'Cormorant Garamond', serif" } as const;
 const sans = { fontFamily: "'Inter', sans-serif" } as const;
 
-/* ============ CONCEPT 1 — A as abstract eagle ============ */
-function Concept1({ wordColor, taglineColor }: { wordColor: string; taglineColor: string }) {
+type Props = { wordColor: string; taglineColor: string; lineColor: string };
+
+/* ============ CONCEITO 1 — Dupla Linha com Movimento ============ */
+function Concept1({ wordColor, taglineColor, lineColor }: Props) {
+  const W = 420;
   return (
-    <div className="flex flex-col items-center">
-      <div className="flex items-baseline" style={{ ...serif, color: wordColor, fontSize: 56, fontWeight: 500, letterSpacing: 6 }}>
-        {/* Custom A with wing */}
-        <svg width="48" height="56" viewBox="0 0 48 56" style={{ marginRight: 2 }}>
-          <path
-            d="M4 52 L22 6 L40 52"
-            fill="none"
-            stroke={wordColor}
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <line x1="12" y1="36" x2="32" y2="36" stroke={wordColor} strokeWidth="2" />
-          {/* wing curve from right leg */}
-          <path
-            d="M40 52 Q46 30 36 14"
-            fill="none"
-            stroke={wordColor}
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-        </svg>
-        <span>KILA</span>
+    <div className="flex flex-col items-center" style={{ width: W }}>
+      {/* duas linhas paralelas acima */}
+      <div style={{ width: W }}>
+        <div style={{ height: 1, background: lineColor }} />
+        <div style={{ height: 4 }} />
+        <div style={{ height: 1, background: lineColor }} />
       </div>
-      <p style={{ ...sans, color: taglineColor, fontSize: 10, letterSpacing: 4, textTransform: "uppercase", marginTop: 14 }}>
+      <h2 style={{ ...serif, color: wordColor, fontSize: 52, fontWeight: 500, letterSpacing: 10, margin: "16px 0", paddingLeft: 10 }}>
+        AKILA
+      </h2>
+      {/* duas linhas abaixo, a inferior com curvatura ascendente à direita */}
+      <svg width={W} height="14" viewBox={`0 0 ${W} 14`}>
+        <line x1="0" y1="2" x2={W} y2="2" stroke={lineColor} strokeWidth="1" />
+        <path
+          d={`M 0 8 L ${W * 0.8} 8 Q ${W * 0.9} 8 ${W} 2`}
+          fill="none"
+          stroke={lineColor}
+          strokeWidth="1"
+        />
+      </svg>
+      <p style={{ ...sans, color: taglineColor, fontSize: 10, letterSpacing: 5, textTransform: "uppercase", marginTop: 14 }}>
         Consultoria Executiva
       </p>
     </div>
   );
 }
 
-/* ============ CONCEPT 2 — Monogram + Wordmark ============ */
-function Concept2({ wordColor, taglineColor }: { wordColor: string; taglineColor: string }) {
+/* ============ CONCEITO 2 — Dupla Linha com Diamante ============ */
+function Concept2({ wordColor, taglineColor, lineColor }: Props) {
+  const W = 420;
+  const half = W / 2;
+  const gap = 8; // diamond size
+  const segEnd = half - gap; // line end before diamond
+  const segStart = half + gap;
+  const DoubleWithDiamond = (
+    <svg width={W} height="14" viewBox={`0 0 ${W} 14`}>
+      {/* top line */}
+      <line x1="0" y1="2" x2={segEnd} y2="2" stroke={lineColor} strokeWidth="1" />
+      <line x1={segStart} y1="2" x2={W} y2="2" stroke={lineColor} strokeWidth="1" />
+      {/* bottom line */}
+      <line x1="0" y1="8" x2={segEnd} y2="8" stroke={lineColor} strokeWidth="1" />
+      <line x1={segStart} y1="8" x2={W} y2="8" stroke={lineColor} strokeWidth="1" />
+      {/* diamond centered between the two lines (at y=5) */}
+      <polygon points={`${half},1 ${half + 4},5 ${half},9 ${half - 4},5`} fill={lineColor} />
+    </svg>
+  );
   return (
-    <div className="flex items-center gap-5">
-      <div
+    <div className="flex flex-col items-center" style={{ width: W }}>
+      {DoubleWithDiamond}
+      <h2 style={{ ...serif, color: wordColor, fontSize: 52, fontWeight: 500, letterSpacing: 10, margin: "16px 0", paddingLeft: 10 }}>
+        AKILA
+      </h2>
+      {DoubleWithDiamond}
+      <p style={{ ...sans, color: taglineColor, fontSize: 10, letterSpacing: 5, textTransform: "uppercase", marginTop: 14 }}>
+        Consultoria Executiva
+      </p>
+    </div>
+  );
+}
+
+/* ============ CONCEITO 3 — Wordmark com Linha Ascendente Única ============ */
+function Concept3({ wordColor, taglineColor, lineColor }: Props) {
+  const W = 460;
+  return (
+    <div className="flex flex-col items-start" style={{ width: W }}>
+      <h2 style={{ ...serif, color: wordColor, fontSize: 56, fontWeight: 500, letterSpacing: 12, margin: 0, paddingLeft: 12 }}>
+        AKILA
+      </h2>
+      <svg width={W} height="20" viewBox={`0 0 ${W} 20`} style={{ marginTop: 10 }}>
+        <path
+          d={`M 0 16 L ${W * 0.7} 16 L ${W} 4`}
+          fill="none"
+          stroke={lineColor}
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+      </svg>
+      <p
         style={{
-          width: 64,
-          height: 64,
-          border: `2px solid ${GOLD}`,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          ...sans,
+          color: taglineColor,
+          fontSize: 10,
+          letterSpacing: 5,
+          textTransform: "uppercase",
+          marginTop: 10,
+          width: W,
+          textAlign: "right",
         }}
       >
-        <span style={{ ...serif, color: wordColor, fontSize: 38, lineHeight: 1, fontWeight: 500 }}>A</span>
+        Consultoria Executiva
+      </p>
+    </div>
+  );
+}
+
+/* ============ CONCEITO 4 — Selo Circular Premium ============ */
+function Concept4({ wordColor, taglineColor, lineColor }: Props) {
+  const size = 200;
+  const cx = size / 2;
+  const cy = size / 2;
+  const r = (size - 4) / 2;
+
+  // top arc: from 200° to 340°, sweep clockwise
+  const toRad = (deg: number) => (deg * Math.PI) / 180;
+  const pt = (deg: number, rr = r - 10) => ({
+    x: cx + rr * Math.cos(toRad(deg)),
+    y: cy + rr * Math.sin(toRad(deg)),
+  });
+  // SVG y axis is inverted; "topo" = negative y. 200°..340° in screen coords = lower arc.
+  // We want the words to follow the TOP edge — use 200°..340° but with negative angles (above center).
+  // Easier: top arc from 200° to 340° measured from positive x going CCW upward.
+  // We'll draw arcs explicitly:
+  const topStart = pt(200);
+  const topEnd = pt(340);
+  const bottomStart = pt(160);
+  const bottomEnd = pt(20);
+
+  return (
+    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke={lineColor} strokeWidth="1.5" />
+      <defs>
+        {/* top arc path: from (200°) sweeping clockwise (above center) to (340°) -- using large-arc flags */}
+        <path
+          id="c4-top"
+          d={`M ${topStart.x} ${topStart.y} A ${r - 10} ${r - 10} 0 1 1 ${topEnd.x} ${topEnd.y}`}
+          fill="none"
+        />
+        <path
+          id="c4-bottom"
+          d={`M ${bottomStart.x} ${bottomStart.y} A ${r - 10} ${r - 10} 0 0 0 ${bottomEnd.x} ${bottomEnd.y}`}
+          fill="none"
+        />
+      </defs>
+      <text style={{ ...sans, fontSize: 8, letterSpacing: 3 }} fill={taglineColor}>
+        <textPath href="#c4-top" startOffset="50%" textAnchor="middle">
+          CONSULTORIA EXECUTIVA
+        </textPath>
+      </text>
+      <text style={{ ...sans, fontSize: 7, letterSpacing: 2 }} fill={taglineColor}>
+        <textPath href="#c4-bottom" startOffset="50%" textAnchor="middle">
+          · BRASIL · DESDE 2019 ·
+        </textPath>
+      </text>
+      <text
+        x={cx}
+        y={cy + 4}
+        textAnchor="middle"
+        style={{ ...serif, fontSize: 36, fontWeight: 500, letterSpacing: 8 }}
+        fill={wordColor}
+      >
+        AKILA
+      </text>
+      <line x1={cx - 20} y1={cy + 22} x2={cx - 4} y2={cy + 22} stroke={lineColor} strokeWidth="1" />
+      <line x1={cx + 4} y1={cy + 22} x2={cx + 20} y2={cy + 22} stroke={lineColor} strokeWidth="1" />
+      <circle cx={cx} cy={cy + 22} r="1.5" fill={lineColor} />
+    </svg>
+  );
+}
+
+/* ============ CONCEITO 5 — Monograma A Aberto + Wordmark ============ */
+function Concept5({ wordColor, taglineColor, lineColor }: Props) {
+  // Open square: 8 segments, 10px gap at each corner
+  const S = 56;
+  const g = 10;
+  return (
+    <div className="flex items-center gap-5">
+      <div style={{ width: S, height: S, position: "relative" }}>
+        <svg width={S} height={S} viewBox={`0 0 ${S} ${S}`}>
+          {/* top: two segments with gaps at corners */}
+          <line x1={g} y1="0.75" x2={S / 2 - 4} y2="0.75" stroke={lineColor} strokeWidth="1.5" />
+          <line x1={S / 2 + 4} y1="0.75" x2={S - g} y2="0.75" stroke={lineColor} strokeWidth="1.5" />
+          {/* bottom */}
+          <line x1={g} y1={S - 0.75} x2={S / 2 - 4} y2={S - 0.75} stroke={lineColor} strokeWidth="1.5" />
+          <line x1={S / 2 + 4} y1={S - 0.75} x2={S - g} y2={S - 0.75} stroke={lineColor} strokeWidth="1.5" />
+          {/* left */}
+          <line x1="0.75" y1={g} x2="0.75" y2={S / 2 - 4} stroke={lineColor} strokeWidth="1.5" />
+          <line x1="0.75" y1={S / 2 + 4} x2="0.75" y2={S - g} stroke={lineColor} strokeWidth="1.5" />
+          {/* right */}
+          <line x1={S - 0.75} y1={g} x2={S - 0.75} y2={S / 2 - 4} stroke={lineColor} strokeWidth="1.5" />
+          <line x1={S - 0.75} y1={S / 2 + 4} x2={S - 0.75} y2={S - g} stroke={lineColor} strokeWidth="1.5" />
+        </svg>
+        <span
+          style={{
+            ...serif,
+            color: wordColor,
+            fontSize: 32,
+            fontWeight: 500,
+            position: "absolute",
+            inset: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            lineHeight: 1,
+          }}
+        >
+          A
+        </span>
       </div>
+      <div style={{ width: 1, height: 40, background: lineColor }} />
       <div className="flex flex-col">
-        <span style={{ ...serif, color: wordColor, fontSize: 36, fontWeight: 500, letterSpacing: 4, lineHeight: 1 }}>AKILA</span>
-        <div style={{ height: 1, background: GOLD, margin: "8px 0", width: "100%" }} />
+        <span style={{ ...serif, color: wordColor, fontSize: 38, fontWeight: 500, letterSpacing: 6, lineHeight: 1 }}>
+          AKILA
+        </span>
+        <div style={{ height: 1, background: lineColor, margin: "8px 0", width: "100%" }} />
         <span style={{ ...sans, color: taglineColor, fontSize: 9, letterSpacing: 4, textTransform: "uppercase" }}>
           Consultoria Executiva
         </span>
@@ -81,181 +238,82 @@ function Concept2({ wordColor, taglineColor }: { wordColor: string; taglineColor
   );
 }
 
-/* ============ CONCEPT 3 — Circular Seal ============ */
-function Concept3({ wordColor, taglineColor }: { wordColor: string; taglineColor: string }) {
-  const size = 220;
-  const r = 100;
-  const cx = size / 2;
-  const cy = size / 2;
-  // Curved text path (top arc)
-  const topPathId = "c3-top";
-  const text = "· CONSULTORIA EXECUTIVA · DESDE 2019 ·";
-  return (
-    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-      <circle cx={cx} cy={cy} r={r} fill="none" stroke={GOLD} strokeWidth="1.5" />
-      <defs>
-        <path
-          id={topPathId}
-          d={`M ${cx - r + 8},${cy} A ${r - 8},${r - 8} 0 1,1 ${cx + r - 8},${cy}`}
-          fill="none"
-        />
-      </defs>
-      <text style={{ ...sans, fontSize: 8, letterSpacing: 3 }} fill={taglineColor}>
-        <textPath href={`#${topPathId}`} startOffset="50%" textAnchor="middle">
-          {text}
-        </textPath>
-      </text>
-      <text
-        x={cx}
-        y={cy + 4}
-        textAnchor="middle"
-        style={{ ...serif, fontSize: 28, fontWeight: 500, letterSpacing: 3 }}
-        fill={wordColor}
-      >
-        AKILA
-      </text>
-      {/* ornamental line */}
-      <line x1={cx - 30} y1={cy + 18} x2={cx + 30} y2={cy + 18} stroke={GOLD} strokeWidth="0.8" />
-      <circle cx={cx} cy={cy + 18} r="1.5" fill={GOLD} />
-    </svg>
-  );
-}
-
-/* ============ CONCEPT 4 — Geometric Eagle ============ */
-function Concept4({ wordColor, taglineColor }: { wordColor: string; taglineColor: string }) {
-  return (
-    <div className="flex flex-col items-center">
-      <svg width="60" height="36" viewBox="0 0 60 36">
-        {/* wings */}
-        <line x1="30" y1="18" x2="6" y2="6" stroke={GOLD} strokeWidth="1.8" strokeLinecap="round" />
-        <line x1="30" y1="18" x2="54" y2="6" stroke={GOLD} strokeWidth="1.8" strokeLinecap="round" />
-        {/* body */}
-        <line x1="30" y1="14" x2="30" y2="28" stroke={GOLD} strokeWidth="1.8" strokeLinecap="round" />
-        {/* head */}
-        <polygon points="30,8 27,14 33,14" fill={GOLD} />
-        {/* tail */}
-        <line x1="30" y1="28" x2="36" y2="34" stroke={GOLD} strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-      <span style={{ ...serif, color: wordColor, fontSize: 36, fontWeight: 500, letterSpacing: 8, marginTop: 14 }}>AKILA</span>
-      <p style={{ ...sans, color: taglineColor, fontSize: 10, letterSpacing: 4, textTransform: "uppercase", marginTop: 8 }}>
-        Consultoria Executiva
-      </p>
+/* ============ CONCEITO 6 — Dupla Linha Encurtada ============ */
+function Concept6({ wordColor, taglineColor, lineColor }: Props) {
+  const W = 480;
+  const lineW = W * 0.8;
+  const Double = (
+    <div style={{ width: lineW }}>
+      <div style={{ height: 1, background: lineColor }} />
+      <div style={{ height: 4 }} />
+      <div style={{ height: 1, background: lineColor }} />
     </div>
   );
-}
-
-/* ============ CONCEPT 5 — Heraldic Shield ============ */
-function Concept5({ wordColor, taglineColor }: { wordColor: string; taglineColor: string }) {
   return (
-    <div className="flex flex-col items-center">
-      <svg width="64" height="76" viewBox="0 0 64 76">
-        <path
-          d="M4 4 L60 4 L60 38 Q60 64 32 72 Q4 64 4 38 Z"
-          fill="none"
-          stroke={GOLD}
-          strokeWidth="2"
-        />
-        {/* simplified eagle inside */}
-        <g transform="translate(32 36)">
-          <line x1="0" y1="0" x2="-14" y2="-8" stroke={GOLD} strokeWidth="1.5" strokeLinecap="round" />
-          <line x1="0" y1="0" x2="14" y2="-8" stroke={GOLD} strokeWidth="1.5" strokeLinecap="round" />
-          <line x1="0" y1="-4" x2="0" y2="10" stroke={GOLD} strokeWidth="1.5" strokeLinecap="round" />
-          <polygon points="0,-8 -3,-3 3,-3" fill={GOLD} />
-        </g>
-      </svg>
-      <div style={{ width: 64, height: 1, background: GOLD, marginTop: 12 }} />
-      <span style={{ ...serif, color: wordColor, fontSize: 36, fontWeight: 500, letterSpacing: 5, marginTop: 10 }}>AKILA</span>
-      <p style={{ ...sans, color: taglineColor, fontSize: 9, letterSpacing: 4, textTransform: "uppercase", marginTop: 6 }}>
-        Consultoria Executiva
-      </p>
-    </div>
-  );
-}
-
-/* ============ CONCEPT 6 — Pure Wordmark ============ */
-function Concept6({ wordColor, taglineColor }: { wordColor: string; taglineColor: string }) {
-  const width = 320;
-  return (
-    <div className="flex flex-col items-center">
-      <div style={{ width }}>
-        <div style={{ height: 1, background: GOLD }} />
-        <div style={{ height: 3 }} />
-        <div style={{ height: 1, background: GOLD }} />
-      </div>
-      <h2
-        style={{
-          ...serif,
-          color: wordColor,
-          fontSize: 48,
-          fontWeight: 500,
-          letterSpacing: 12,
-          margin: "18px 0",
-          textAlign: "center",
-          paddingLeft: 12,
-        }}
-      >
+    <div className="flex flex-col items-center" style={{ width: W }}>
+      {Double}
+      <h2 style={{ ...serif, color: wordColor, fontSize: 58, fontWeight: 500, letterSpacing: 14, margin: "18px 0", paddingLeft: 14 }}>
         AKILA
       </h2>
-      <div style={{ width }}>
-        <div style={{ height: 1, background: GOLD }} />
-        <div style={{ height: 3 }} />
-        <div style={{ height: 1, background: GOLD }} />
-      </div>
-      <p style={{ ...sans, color: taglineColor, fontSize: 9, letterSpacing: 6, textTransform: "uppercase", marginTop: 14 }}>
+      {Double}
+      <p style={{ ...sans, color: taglineColor, fontSize: 10, letterSpacing: 6, textTransform: "uppercase", marginTop: 16 }}>
         Consultoria Executiva
       </p>
     </div>
   );
 }
 
-/* ============ CONCEPT 7 — Single Wing from K ============ */
-function Concept7({ wordColor, taglineColor }: { wordColor: string; taglineColor: string }) {
+/* ============ CONCEITO 7 — Traço Dourado Atravessando o Nome ============ */
+function Concept7({ wordColor, taglineColor, lineColor }: Props) {
+  const W = 480;
+  const H = 90;
   return (
-    <div className="flex flex-col items-center">
-      <div style={{ position: "relative" }}>
-        <span style={{ ...serif, color: wordColor, fontSize: 56, fontWeight: 500, letterSpacing: 4 }}>AKILA</span>
-        {/* wing emerging from K top */}
+    <div className="flex flex-col items-center" style={{ width: W }}>
+      <div style={{ position: "relative", width: W, height: H }}>
+        {/* traço (z-index menor) */}
         <svg
-          width="120"
-          height="80"
-          viewBox="0 0 120 80"
-          style={{ position: "absolute", top: -52, left: 52, pointerEvents: "none" }}
+          width={W}
+          height={H}
+          viewBox={`0 0 ${W} ${H}`}
+          style={{ position: "absolute", inset: 0, zIndex: 0 }}
         >
+          {/* curva fluida horizontal centro vertical = H/2 = 45 */}
           <path
-            d="M10 70 Q40 10 110 8"
+            d={`M 0 48
+                C 60 48, 90 56, 130 54
+                C 170 52, 200 38, 240 40
+                C 280 42, 310 52, 350 50
+                C 390 48, 420 42, 460 34
+                C 470 32, 478 30, ${W} 28`}
             fill="none"
-            stroke={GOLD}
+            stroke={lineColor}
             strokeWidth="1.5"
             strokeLinecap="round"
           />
-          {/* feather tips */}
-          <line x1="100" y1="10" x2="108" y2="2" stroke={GOLD} strokeWidth="1.2" strokeLinecap="round" />
-          <line x1="88" y1="14" x2="94" y2="4" stroke={GOLD} strokeWidth="1.2" strokeLinecap="round" />
-          <line x1="76" y1="20" x2="80" y2="8" stroke={GOLD} strokeWidth="1.2" strokeLinecap="round" />
         </svg>
+        {/* nome (z-index maior) */}
+        <h2
+          style={{
+            ...serif,
+            color: wordColor,
+            fontSize: 58,
+            fontWeight: 500,
+            letterSpacing: 10,
+            margin: 0,
+            paddingLeft: 10,
+            textAlign: "center",
+            position: "absolute",
+            inset: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 1,
+          }}
+        >
+          AKILA
+        </h2>
       </div>
-      <p style={{ ...sans, color: taglineColor, fontSize: 10, letterSpacing: 4, textTransform: "uppercase", marginTop: 14 }}>
-        Consultoria Executiva
-      </p>
-    </div>
-  );
-}
-
-/* ============ CONCEPT 8 — Initial A with Crown ============ */
-function Concept8({ wordColor, taglineColor }: { wordColor: string; taglineColor: string }) {
-  return (
-    <div className="flex flex-col items-center">
-      <svg width="80" height="22" viewBox="0 0 80 22">
-        {/* 5 vertical points, center tallest */}
-        <line x1="10" y1="20" x2="10" y2="12" stroke={GOLD} strokeWidth="1.5" strokeLinecap="round" />
-        <line x1="25" y1="20" x2="25" y2="8" stroke={GOLD} strokeWidth="1.5" strokeLinecap="round" />
-        <line x1="40" y1="20" x2="40" y2="2" stroke={GOLD} strokeWidth="1.5" strokeLinecap="round" />
-        <line x1="55" y1="20" x2="55" y2="8" stroke={GOLD} strokeWidth="1.5" strokeLinecap="round" />
-        <line x1="70" y1="20" x2="70" y2="12" stroke={GOLD} strokeWidth="1.5" strokeLinecap="round" />
-        <line x1="6" y1="20" x2="74" y2="20" stroke={GOLD} strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-      <span style={{ ...serif, color: wordColor, fontSize: 42, fontWeight: 500, letterSpacing: 8, marginTop: 10 }}>AKILA</span>
-      <p style={{ ...sans, color: taglineColor, fontSize: 9, letterSpacing: 4, textTransform: "uppercase", marginTop: 8 }}>
+      <p style={{ ...sans, color: taglineColor, fontSize: 10, letterSpacing: 5, textTransform: "uppercase", marginTop: 8 }}>
         Consultoria Executiva
       </p>
     </div>
@@ -263,21 +321,20 @@ function Concept8({ wordColor, taglineColor }: { wordColor: string; taglineColor
 }
 
 const CONCEPTS = [
-  { n: 1, name: "O \"A\" como Águia Abstrata", Comp: Concept1 },
-  { n: 2, name: "Monograma + Wordmark", Comp: Concept2 },
-  { n: 3, name: "Selo Circular", Comp: Concept3 },
-  { n: 4, name: "Águia Minimalista Geométrica", Comp: Concept4 },
-  { n: 5, name: "Brasão Escudo", Comp: Concept5 },
-  { n: 6, name: "Wordmark Puro Premium", Comp: Concept6 },
-  { n: 7, name: "Asa Única Integrada", Comp: Concept7 },
-  { n: 8, name: "Inicial A com Coroa", Comp: Concept8 },
+  { n: 1, name: "Dupla Linha com Movimento", Comp: Concept1 },
+  { n: 2, name: "Dupla Linha com Diamante", Comp: Concept2 },
+  { n: 3, name: "Wordmark com Linha Ascendente Única", Comp: Concept3 },
+  { n: 4, name: "Selo Circular Premium", Comp: Concept4 },
+  { n: 5, name: "Monograma A Aberto + Wordmark", Comp: Concept5 },
+  { n: 6, name: "Dupla Linha Encurtada com Autoridade", Comp: Concept6 },
+  { n: 7, name: "Traço Dourado Atravessando o Nome", Comp: Concept7 },
 ];
 
 function Stage({ bg, children }: { bg: string; children: React.ReactNode }) {
   return (
     <div
       className="flex items-center justify-center"
-      style={{ background: bg, minHeight: 280, padding: "48px 24px" }}
+      style={{ background: bg, minHeight: 320, padding: "56px 24px" }}
     >
       {children}
     </div>
@@ -293,7 +350,7 @@ function ConceitosPage() {
             Direção de marca
           </p>
           <h1 style={{ ...serif, color: GREEN, fontSize: 48, fontWeight: 500, marginTop: 10, letterSpacing: 2 }}>
-            8 Conceitos de Logo — Akila Consultoria Executiva
+            Conceitos de Logo — Akila Consultoria Executiva
           </h1>
           <p style={{ ...sans, color: "#444", marginTop: 12, maxWidth: 640, fontSize: 14, lineHeight: 1.6 }}>
             Cada conceito apresentado em fundo creme (#F2EBD9) e fundo verde (#006039),
@@ -321,10 +378,10 @@ function ConceitosPage() {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2" style={{ border: `1px solid ${GOLD}` }}>
                 <Stage bg={CREAM}>
-                  <Comp wordColor={GREEN} taglineColor={GOLD} />
+                  <Comp wordColor={GREEN} taglineColor={GOLD} lineColor={GOLD} />
                 </Stage>
                 <Stage bg={GREEN}>
-                  <Comp wordColor={CREAM} taglineColor={GOLD} />
+                  <Comp wordColor={CREAM} taglineColor={GOLD} lineColor={GOLD} />
                 </Stage>
               </div>
             </section>
