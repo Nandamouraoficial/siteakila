@@ -69,7 +69,7 @@ export function Navbar() {
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[14px] border border-[var(--color-gold)] text-[var(--color-gold)] px-5 py-2.5 hover:bg-[var(--color-gold)] hover:text-white transition-colors"
+            className="text-[14px] border border-[var(--color-gold)] text-[var(--color-foreground)] px-5 py-2.5 hover:bg-[var(--color-surface-dark)] hover:text-[var(--color-on-dark)] hover:border-[var(--color-surface-dark)] transition-colors"
           >
             Agendar conversa
           </a>
@@ -131,7 +131,7 @@ export function Navbar() {
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 text-center border border-[var(--color-gold)] text-[var(--color-gold)] px-5 py-3 text-[14px] hover:bg-[var(--color-gold)] hover:text-white transition-colors"
+                className="mt-6 text-center border border-[var(--color-gold)] text-[var(--color-foreground)] px-5 py-3 text-[14px] hover:bg-[var(--color-surface-dark)] hover:text-[var(--color-on-dark)] hover:border-[var(--color-surface-dark)] transition-colors"
               >
                 Agendar conversa
               </a>
