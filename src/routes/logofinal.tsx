@@ -21,12 +21,12 @@ type Palette = {
 const PALETTES: Palette[] = [
   // ATUAL (cores do site /conceitos)
   {
-    name: "Atual · Creme Harrods",
-    bg: "#F2EBD9",
-    variant: "light",
+    name: "Atual · Cinza com Preto e Dourado",
+    bg: "#A6A8AB",
+    variant: "dark",
     source: "Atual",
-    swatches: ["#F2EBD9", "#006039", "#B8860B"],
-    note: "Como aparece no site hoje",
+    swatches: ["#A6A8AB", "#000000", "#B8860B"],
+    note: "Neutro sofisticado com acento dourado",
   },
   {
     name: "Atual · Esmeralda Rolex",
