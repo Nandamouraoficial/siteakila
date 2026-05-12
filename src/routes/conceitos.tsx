@@ -33,18 +33,28 @@ function Wordmark({
   italic,
   color,
 }: TypographyProps & { color: string }) {
+  // Tamanho responsivo: encolhe no mobile mas mantém o desktop equivalente ao definido.
+  // clamp(min, preferido, max) — min ≈ 62% do desktop para preservar legibilidade do K.
+  const responsiveSize = `clamp(${Math.round(size * 0.62)}px, ${(size / 10).toFixed(2)}vw + ${Math.round(size * 0.45)}px, ${size}px)`;
+  // letter-spacing proporcional (em) — escala junto com o tamanho da fonte,
+  // evitando que o K "feche" no mobile.
+  const spacingEm = `${(spacing / size).toFixed(3)}em`;
   return (
     <span
       style={{
         fontFamily: font,
         fontWeight: weight,
-        fontSize: size,
-        letterSpacing: spacing,
+        fontSize: responsiveSize,
+        letterSpacing: spacingEm,
         fontStyle: italic ? "italic" : "normal",
         color,
         lineHeight: 1,
+        // garante kerning ativo e evita ligaduras que possam atenuar o K
+        fontKerning: "normal",
+        fontFeatureSettings: '"kern" 1, "liga" 0, "clig" 0',
         // compensa o letter-spacing à direita para centralizar opticamente
-        paddingLeft: spacing,
+        paddingLeft: spacingEm,
+        whiteSpace: "nowrap",
       }}
     >
       AKILA
