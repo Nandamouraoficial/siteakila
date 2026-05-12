@@ -41,6 +41,14 @@ const PALETAS: Palette[] = [
     textOnDark: "#FAF8F4",
     textOnLight: "#1A1A1A",
   },
+  {
+    name: "D · Esmeralda + Dourado Clássico",
+    dark: "#1E4D3A",
+    light: "#F7F4EF",
+    gold: "#C9A96E",
+    textOnDark: "#F7F4EF",
+    textOnLight: "#1A1A1A",
+  },
 ];
 
 const HEADLINE = "Você chegou longe. O próximo passo precisa ser certo.";
@@ -167,7 +175,7 @@ function PaletasPage() {
           </p>
         </header>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6">
           {PALETAS.map((p) => (
             <PaletteColumn key={p.name} p={p} />
           ))}
