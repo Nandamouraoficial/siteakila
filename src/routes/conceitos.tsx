@@ -240,7 +240,7 @@ function Block({
   return (
     <section style={{ borderBottom: `1px solid ${GOLD}`, padding: "40px 0" }}>
       <div className="mb-6 flex items-baseline gap-4 flex-wrap">
-        <span style={{ ...serif, color: GOLD, fontSize: 32, fontWeight: 500, lineHeight: 1 }}>
+        <span style={{ ...serif, color: GOLD, fontSize: 32, fontWeight: 500, lineHeight: 1, textShadow: GOLD_SHADOWS.onLight }}>
           {number}
         </span>
         <h2 style={{ ...serif, color: GREEN, fontSize: 24, fontWeight: 500, lineHeight: 1 }}>
