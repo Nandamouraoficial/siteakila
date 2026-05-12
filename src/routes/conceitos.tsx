@@ -20,14 +20,17 @@ const GREEN_DEEP = "#00301C";
 const CREAM_BRIGHT = "#FBF6E8";
 
 type ShadowVariant = "onLight" | "onDark";
-const SHADOWS: Record<ShadowVariant, string> = {
-  onLight:
-    "0 0 1px rgba(184,134,11,0.35), 0 1px 0 rgba(0,48,28,0.25)",
-  onDark: "0 0 1px rgba(251,246,232,0.45)",
+const WORD_SHADOWS: Record<ShadowVariant, string> = {
+  onLight: "0 0 0.6px rgba(0,48,28,0.55), 0 1px 0 rgba(0,48,28,0.22)",
+  onDark: "0 0 0.6px rgba(251,246,232,0.85), 0 0 8px rgba(251,246,232,0.18)",
 };
-const TAGLINE_SHADOWS: Record<ShadowVariant, string> = {
+const GOLD_SHADOWS: Record<ShadowVariant, string> = {
   onLight: "0 0 0.5px rgba(139,99,8,0.9), 0 1px 0 rgba(0,48,28,0.18)",
   onDark: "0 0 0.5px rgba(184,134,11,0.95), 0 0 6px rgba(184,134,11,0.25)",
+};
+const SWASH_FILTERS: Record<ShadowVariant, string> = {
+  onLight: "drop-shadow(0 0 0.6px rgba(184,134,11,0.55)) drop-shadow(0 1px 0 rgba(0,48,28,0.15))",
+  onDark: "drop-shadow(0 0 0.6px rgba(184,134,11,0.9)) drop-shadow(0 0 4px rgba(184,134,11,0.3))",
 };
 
 type TypographyProps = {
