@@ -18,20 +18,12 @@ type Palette = {
 
 const PALETAS: Palette[] = [
   {
-    name: "F · Harrods (Verde Imperial + Latão)",
-    dark: "#3D4A1F",
+    name: "H · Esmeralda Rolex + Creme Harrods + Latão",
+    dark: "#006039",
     light: "#F2EBD9",
     gold: "#B8860B",
     textOnDark: "#F2EBD9",
     textOnLight: "#1A1A1A",
-  },
-  {
-    name: "G · Rolex (Esmeralda + Ouro 18k)",
-    dark: "#006039",
-    light: "#FAFAFA",
-    gold: "#D4AF37",
-    textOnDark: "#FAFAFA",
-    textOnLight: "#0A0A0A",
   },
 ];
 

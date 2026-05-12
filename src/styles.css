@@ -58,13 +58,13 @@
 :root {
   --radius: 2px;
 
-  /* Akila brand — Paleta E (Esmeralda + Âmbar) */
-  --background: oklch(0.965 0.008 85);           /* #F7F4EF off-white quente */
+  /* Akila brand — Paleta H (Esmeralda Rolex + Creme Harrods + Latão) */
+  --background: oklch(0.935 0.025 85);           /* #F2EBD9 creme Harrods */
   --foreground: oklch(0.18 0 0);                 /* quase preto p/ texto */
-  --surface-dark: oklch(0.34 0.06 155);          /* #1E4D3A verde esmeralda */
-  --on-dark: oklch(0.965 0.008 85);              /* #F7F4EF sobre escuro */
-  --gold: oklch(0.755 0.13 85);                  /* #D4A847 dourado âmbar */
-  --gold-soft: oklch(0.92 0.025 85);             /* bege claro */
+  --surface-dark: oklch(0.36 0.09 158);          /* #006039 verde esmeralda Rolex */
+  --on-dark: oklch(0.935 0.025 85);              /* #F2EBD9 sobre escuro */
+  --gold: oklch(0.66 0.13 78);                   /* #B8860B latão / dark goldenrod */
+  --gold-soft: oklch(0.9 0.04 85);               /* bege dourado claro */
 
   --card: oklch(0.965 0.008 85);
   --card-foreground: oklch(0.18 0 0);
