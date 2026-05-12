@@ -122,14 +122,16 @@ function Lockup({
   typography,
   wordColor,
   accentColor,
+  shadow,
 }: {
   typography: TypographyProps;
   wordColor: string;
   accentColor: string;
+  shadow?: ShadowVariant;
 }) {
   return (
     <div className="flex flex-col items-center">
-      <Wordmark {...typography} color={wordColor} />
+      <Wordmark {...typography} color={wordColor} shadow={shadow} />
       <div style={{ marginTop: 14 }}>
         <EagleSwash color={accentColor} width={360} />
       </div>
