@@ -52,9 +52,9 @@ const PALETAS: Palette[] = [
   {
     name: "E · Esmeralda + Âmbar",
     dark: "#1E4D3A",
-    light: "#F7F4EF",
+    light: "#F0E7D2",
     gold: "#D4A847",
-    textOnDark: "#F7F4EF",
+    textOnDark: "#F0E7D2",
     textOnLight: "#1A1A1A",
   },
 ];
