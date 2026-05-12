@@ -1,30 +1,45 @@
 ## Objetivo
 
-No Conceito 7 da página `/conceitos`, trocar o traço dourado fluido por uma **águia estilizada em voo** que atravessa horizontalmente o wordmark AKILA — mantendo elegância premium (fina, monolinha, não decorativa demais).
+Substituir a página `/conceitos` por uma apresentação focada na **versão refinada do logo anexado** (wordmark AKILA + swash dourado em forma de águia estilizada abaixo + tagline) aplicada em **6 variações tipográficas**.
 
-## Mudanças
+## Estrutura da nova página
 
-Arquivo único: `src/routes/conceitos.tsx` — apenas o componente `Concept7`.
+Topo:
+- Header com supratítulo "Direção de marca" + título "AKILA — Estudo Tipográfico" e linha curta de contexto.
 
-### Nova composição do Conceito 7
+Bloco 1 — **Versão Refinada (Base)**:
+- Aperfeiçoamento da imagem anexada — mesmo conceito (swash dourado abaixo do nome) mas com:
+  - Linha do swash mais fina e elegante (1.2–1.5px), sem aspecto pesado.
+  - Pequeno detalhe central da águia mais legível (mini bico/cabeça discreto, não torcido).
+  - Tagline "CONSULTORIA EXECUTIVA" Inter 10px, letter-spacing 5px, #B8860B, sem cortes.
+  - Wordmark Cormorant Garamond 400, 56px, letter-spacing 12px, #006039.
+- Exibido em fundo creme + fundo verde lado a lado.
 
-- Wordmark "AKILA" — Cormorant Garamond 58px, letter-spacing 10px, #006039 (inalterado).
-- Tagline "CONSULTORIA EXECUTIVA" — Inter 10px, letter-spacing 5px, #B8860B (inalterado).
-- **Águia em SVG** atravessando o nome no centro vertical, em #B8860B, stroke 1.5px, sem preenchimento (exceto detalhes mínimos):
-  - **Corpo + asas abertas**: uma única linha contínua que entra pela esquerda como ponta da asa esquerda, sobe suavemente, forma o topo da asa, desce até o corpo central (entre o "K" e o "I"), e sai pela direita formando a asa direita com leve curvatura ascendente final.
-  - **Cabeça**: pequeno triângulo/bico discreto no centro do corpo, voltado para a direita (sutil, ~6px).
-  - **Cauda**: traço fino diagonal curto saindo do centro para baixo-esquerda (opcional, contido).
-  - Estilo: monolinha geométrica minimalista — referência visual a brasões executivos modernos, não clipart.
-- A águia fica em **z-index 0** (atrás das letras), o wordmark em z-index 1 — sensação de que o nome repousa sobre o voo.
-- Centro vertical da águia alinhado à linha média das letras (≈ y=45 num container de 90px de altura).
-- Envergadura ≈ 100% da largura do wordmark (não ultrapassar muito as bordas das letras).
+Bloco 2 — **6 Variações Tipográficas** (todas usam o mesmo swash dourado refinado abaixo, para comparação justa):
 
-### Versão fundo verde
+| # | Fonte / peso | Tamanho | Letter-spacing | Caráter |
+|---|---|---|---|---|
+| 1 | Cormorant Garamond 300 | 58px | 14px | etéreo, delicado |
+| 2 | Cormorant Garamond 600 | 58px | 10px | autoridade, presença |
+| 3 | Playfair Display 400 | 54px | 12px | editorial Vogue/FT |
+| 4 | Playfair Display 700 | 54px | 8px | máximo impacto |
+| 5 | Cormorant Garamond 400 | 48px | 22px | espaçamento Hermès/Cartier |
+| 6 | Cormorant Garamond 400 italic | 58px | 10px | movimento, complementa águia |
 
-- Wordmark em #F2EBD9, águia e tagline em #B8860B (inalterado em relação ao padrão atual).
+Cada variação é renderizada em **duas colunas lado a lado**: fundo creme (#F2EBD9) à esquerda + fundo verde (#006039) à direita, com cores invertidas no wordmark (#006039 / #F2EBD9). Swash e tagline sempre em #B8860B.
+
+Cada bloco tem cabeçalho com numeração (01–06), nome da variação (ex.: "Cormorant Garamond Light · 300") e moldura fina dourada.
 
 ## Detalhe técnico
 
-Manter a mesma assinatura `Concept7({ wordColor, taglineColor, lineColor })` e o mesmo container `position: relative` com SVG absoluto + h2 absoluto centralizado. Apenas o `<path>` único atual é substituído por um grupo SVG representando a águia (1 path principal para asas+corpo, 1 polígono pequeno para o bico, 1 line curta opcional para a cauda).
+Arquivo único: `src/routes/conceitos.tsx` (substituição completa).
 
-Nenhuma outra parte da página, demais conceitos, ou outros arquivos são tocados.
+- Carregar Google Fonts: `Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400` + `Playfair+Display:wght@400;700` + `Inter:wght@400;500`.
+- Componente `Wordmark({ font, weight, size, spacing, italic, color })` — renderiza apenas o nome com tipografia parametrizada.
+- Componente `EagleSwash({ color })` — SVG do swash refinado: duas curvas finas espelhadas saindo do centro com leve queda nas pontas + pequeno detalhe central (cabeça/bico minimalista). Largura ~340px, altura ~24px, stroke 1.3px.
+- Componente `Lockup({ ...typographyProps, wordColor, accentColor })` — wordmark + swash + tagline em coluna, centralizado.
+- Componente `Stage({ bg })` reutilizado para fundo creme/verde lado a lado.
+- Array `VARIATIONS` com as 6 entradas. Loop renderiza Base + 6.
+- Paleta fixa: `GREEN=#006039`, `CREAM=#F2EBD9`, `GOLD=#B8860B`.
+
+Nenhum outro arquivo é modificado. Conceitos 1–8 atuais são descartados (substituídos pelo novo conteúdo de `/conceitos`).
