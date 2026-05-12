@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ReposicionamentoRouteImport } from './routes/reposicionamento'
+import { Route as PaletasRouteImport } from './routes/paletas'
 import { Route as PalestranteRouteImport } from './routes/palestrante'
 import { Route as MentoriaNegociosRouteImport } from './routes/mentoria-negocios'
 import { Route as MentoriaExecutivaRouteImport } from './routes/mentoria-executiva'
@@ -21,6 +22,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const ReposicionamentoRoute = ReposicionamentoRouteImport.update({
   id: '/reposicionamento',
   path: '/reposicionamento',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaletasRoute = PaletasRouteImport.update({
+  id: '/paletas',
+  path: '/paletas',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PalestranteRoute = PalestranteRouteImport.update({
@@ -67,6 +73,7 @@ export interface FileRoutesByFullPath {
   '/mentoria-executiva': typeof MentoriaExecutivaRoute
   '/mentoria-negocios': typeof MentoriaNegociosRoute
   '/palestrante': typeof PalestranteRoute
+  '/paletas': typeof PaletasRoute
   '/reposicionamento': typeof ReposicionamentoRoute
 }
 export interface FileRoutesByTo {
@@ -77,6 +84,7 @@ export interface FileRoutesByTo {
   '/mentoria-executiva': typeof MentoriaExecutivaRoute
   '/mentoria-negocios': typeof MentoriaNegociosRoute
   '/palestrante': typeof PalestranteRoute
+  '/paletas': typeof PaletasRoute
   '/reposicionamento': typeof ReposicionamentoRoute
 }
 export interface FileRoutesById {
@@ -88,6 +96,7 @@ export interface FileRoutesById {
   '/mentoria-executiva': typeof MentoriaExecutivaRoute
   '/mentoria-negocios': typeof MentoriaNegociosRoute
   '/palestrante': typeof PalestranteRoute
+  '/paletas': typeof PaletasRoute
   '/reposicionamento': typeof ReposicionamentoRoute
 }
 export interface FileRouteTypes {
@@ -100,6 +109,7 @@ export interface FileRouteTypes {
     | '/mentoria-executiva'
     | '/mentoria-negocios'
     | '/palestrante'
+    | '/paletas'
     | '/reposicionamento'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -110,6 +120,7 @@ export interface FileRouteTypes {
     | '/mentoria-executiva'
     | '/mentoria-negocios'
     | '/palestrante'
+    | '/paletas'
     | '/reposicionamento'
   id:
     | '__root__'
@@ -120,6 +131,7 @@ export interface FileRouteTypes {
     | '/mentoria-executiva'
     | '/mentoria-negocios'
     | '/palestrante'
+    | '/paletas'
     | '/reposicionamento'
   fileRoutesById: FileRoutesById
 }
@@ -131,6 +143,7 @@ export interface RootRouteChildren {
   MentoriaExecutivaRoute: typeof MentoriaExecutivaRoute
   MentoriaNegociosRoute: typeof MentoriaNegociosRoute
   PalestranteRoute: typeof PalestranteRoute
+  PaletasRoute: typeof PaletasRoute
   ReposicionamentoRoute: typeof ReposicionamentoRoute
 }
 
@@ -141,6 +154,13 @@ declare module '@tanstack/react-router' {
       path: '/reposicionamento'
       fullPath: '/reposicionamento'
       preLoaderRoute: typeof ReposicionamentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/paletas': {
+      id: '/paletas'
+      path: '/paletas'
+      fullPath: '/paletas'
+      preLoaderRoute: typeof PaletasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/palestrante': {
@@ -203,6 +223,7 @@ const rootRouteChildren: RootRouteChildren = {
   MentoriaExecutivaRoute: MentoriaExecutivaRoute,
   MentoriaNegociosRoute: MentoriaNegociosRoute,
   PalestranteRoute: PalestranteRoute,
+  PaletasRoute: PaletasRoute,
   ReposicionamentoRoute: ReposicionamentoRoute,
 }
 export const routeTree = rootRouteImport
