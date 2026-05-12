@@ -25,6 +25,10 @@ const SHADOWS: Record<ShadowVariant, string> = {
     "0 0 1px rgba(184,134,11,0.35), 0 1px 0 rgba(0,48,28,0.25)",
   onDark: "0 0 1px rgba(251,246,232,0.45)",
 };
+const TAGLINE_SHADOWS: Record<ShadowVariant, string> = {
+  onLight: "0 0 0.5px rgba(139,99,8,0.9), 0 1px 0 rgba(0,48,28,0.18)",
+  onDark: "0 0 0.5px rgba(184,134,11,0.95), 0 0 6px rgba(184,134,11,0.25)",
+};
 
 type TypographyProps = {
   font: string;

@@ -1,39 +1,44 @@
 ## Objetivo
 
-Reforçar o destaque do wordmark "AKILA" sobre o fundo off-white (#F2EBD9) e sobre o fundo verde escuro (#006039) na página `/conceitos`, sem alterar a tipografia escolhida (Cormorant Garamond 700, 56px, tracking 16) nem o swash dourado.
+Refinar o `textShadow` da tagline "CONSULTORIA EXECUTIVA" em `src/routes/conceitos.tsx` para que ela ganhe um halo mais consistente nos dois fundos — incluindo o creme (#F2EBD9), onde hoje o dourado tende a se diluir.
 
-## Mudanças em `src/routes/conceitos.tsx`
+## Mudança única — bloco da tagline em `Lockup`
 
-### 1. Paleta de contraste reforçada
-Adicionar duas variações mais escuras/claras das cores base, usadas exclusivamente no wordmark:
+Hoje (linhas ~138–149):
+- `fontSize: 11`, `fontWeight: 600`, `color: accentColor` (dourado #B8860B).
+- `textShadow` aplicado **só** quando `shadow === "onDark"`, com halo dourado fraco.
+- No fundo creme: nenhum halo, contraste tipográfico baixo demais.
 
-- `GREEN_DEEP = #00301C` — verde quase preto, ~2× mais escuro que `#006039`. Usado para o wordmark sobre fundo creme (eleva contraste de ~7:1 para ~13:1).
-- `CREAM_BRIGHT = #FBF6E8` — creme mais luminoso. Usado para o wordmark sobre fundo verde (contraste mais nítido que o creme atual).
+Substituir o `textShadow` por uma estratégia de halo simétrico, dependente do fundo, com duas camadas:
 
-Swash e tagline continuam em `#B8860B` (dourado), e os fundos continuam `#F2EBD9` / `#006039` — só a cor do nome muda.
+### Sobre fundo creme (`shadow === "onLight"`)
+- Camada 1 (definição): halo fino do próprio dourado um pouco mais escuro para "engrossar" oticamente as letras Inter — `0 0 0.5px rgba(139,99,8,0.9)`.
+- Camada 2 (sombra de assentamento): `0 1px 0 rgba(0,48,28,0.18)` — micro-sombra esverdeada que apoia a tagline no creme sem aspecto de drop shadow.
 
-### 2. Sombra/halo sutil no `Wordmark`
-Acrescentar `textShadow` parametrizado para dar peso ótico sem aspecto "dropshadow":
+### Sobre fundo verde (`shadow === "onDark"`)
+- Camada 1: halo dourado mais firme — `0 0 0.5px rgba(184,134,11,0.95)`.
+- Camada 2: glow dourado muito sutil para destacar do verde profundo — `0 0 6px rgba(184,134,11,0.25)`.
 
-- Sobre creme: halo dourado finíssimo `0 0 1px rgba(184,134,11,0.35)` + sombra interna escura `0 1px 0 rgba(0,48,28,0.25)` para fixar a letra no fundo.
-- Sobre verde: halo creme finíssimo `0 0 1px rgba(251,246,232,0.45)` para separar a letra do verde profundo (sem brilho exagerado).
+### Implementação
+Trocar o `textShadow` inline atual por um lookup paralelo ao já existente para o wordmark:
 
-A sombra é controlada por uma nova prop opcional `shadow: "onLight" | "onDark"` em `Wordmark` e `Lockup`.
+```ts
+const TAGLINE_SHADOWS: Record<ShadowVariant, string> = {
+  onLight:
+    "0 0 0.5px rgba(139,99,8,0.9), 0 1px 0 rgba(0,48,28,0.18)",
+  onDark:
+    "0 0 0.5px rgba(184,134,11,0.95), 0 0 6px rgba(184,134,11,0.25)",
+};
+```
 
-### 3. Aplicação no `Block`
-- Stage creme → `wordColor={GREEN_DEEP}` + `shadow="onLight"`.
-- Stage verde → `wordColor={CREAM_BRIGHT}` + `shadow="onDark"`.
+E no `<p>` da tagline:
+```ts
+textShadow: shadow ? TAGLINE_SHADOWS[shadow] : undefined,
+```
 
-A versão Base e as 6 variações herdam automaticamente, já que todas passam pelo `Block`.
+Mantém `fontSize: 11`, `fontWeight: 600`, `letterSpacing: 5`, cor dourada e tudo o mais — só o halo muda.
 
-### 4. Sem mudança em
-- Swash dourado (`EagleSwash`) e tagline.
-- Tipografia, peso, tamanho, tracking, kerning.
-- Layout, header, grid, bordas douradas.
-- Demais páginas/rotas.
-
-## Resultado esperado
-
-- Sobre creme: o nome ganha profundidade — verde quase preto com leve halo dourado, parecendo "gravado" no papel.
-- Sobre verde escuro: o creme fica mais branco-marfim com micro-halo, destacando os contornos do K e do A sem perder elegância.
-- Mantém estética serif refinada, sem stroke/outline pesado nem sombra projetada.
+## Fora de escopo
+- Tipografia, tamanho, peso, tracking, cor da tagline.
+- Wordmark, swash, layout, paleta de fundos.
+- Qualquer outra rota ou componente.
