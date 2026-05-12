@@ -159,7 +159,7 @@ function PaletasPage() {
           </p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {PALETAS.map((p) => (
             <PaletteColumn key={p.name} p={p} />
           ))}
