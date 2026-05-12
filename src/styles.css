@@ -126,6 +126,29 @@
   h1 { font-size: clamp(36px, 5vw, 52px); }
   h2 { font-size: clamp(28px, 3.5vw, 38px); }
   h3 { font-size: clamp(20px, 2.2vw, 24px); }
+
+  /* Foco visível acessível (WCAG 2.4.7 / 1.4.11). Usa currentColor para
+     herdar contraste suficiente em qualquer superfície (claro ou escuro). */
+  :focus { outline: none; }
+  a:focus-visible,
+  button:focus-visible,
+  [role="button"]:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  summary:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Estado desabilitado consistente */
+  button:disabled,
+  [aria-disabled="true"] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
 }
 
 @layer utilities {
