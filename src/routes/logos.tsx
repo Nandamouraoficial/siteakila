@@ -115,6 +115,16 @@ function LogosPage() {
                   label="Fundo escuro"
                   textColor={LIGHT}
                 />
+                {opt.name.startsWith("Opção 1") && (
+                  <div className="md:col-span-2">
+                    <LogoCard
+                      src={logo1GreenGold}
+                      bg={DARK}
+                      label="Variante — águia mostarda sobre verde"
+                      textColor={LIGHT}
+                    />
+                  </div>
+                )}
               </div>
             </section>
           ))}
