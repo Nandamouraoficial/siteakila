@@ -3,6 +3,7 @@ import logo1 from "@/assets/logo-akila-option-1.png";
 import logo1GreenGold from "@/assets/logo-akila-option-1-green-gold.png";
 import logo2 from "@/assets/logo-akila-option-2.png";
 import logo3 from "@/assets/logo-akila-option-3.png";
+import logo4 from "@/assets/logo-akila-option-4.png";
 
 export const Route = createFileRoute("/logos")({
   head: () => ({
@@ -29,6 +30,11 @@ const OPTIONS = [
     src: logo3,
     name: "Opção 3 — Emblema circular",
     desc: "Medalhão com águia centralizada e texto circular. Heráldico, tradicional, estilo Rolex.",
+  },
+  {
+    src: logo4,
+    name: "Opção 4 — Águia silhueta moderna",
+    desc: "Silhueta geométrica reduzida ao essencial — asas em V angulares, presença imponente com radical simplicidade. Estilo emblema de maison contemporânea.",
   },
 ];
 
