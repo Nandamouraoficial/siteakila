@@ -58,41 +58,41 @@
 :root {
   --radius: 2px;
 
-  /* Akila brand — Paleta E (Esmeralda + Âmbar) */
-  --background: oklch(0.965 0.008 85);           /* #F7F4EF off-white quente */
+  /* Akila brand — Paleta H (Esmeralda Rolex + Creme Harrods + Latão) */
+  --background: oklch(0.935 0.025 85);           /* #F2EBD9 creme Harrods */
   --foreground: oklch(0.18 0 0);                 /* quase preto p/ texto */
-  --surface-dark: oklch(0.34 0.06 155);          /* #1E4D3A verde esmeralda */
-  --on-dark: oklch(0.965 0.008 85);              /* #F7F4EF sobre escuro */
-  --gold: oklch(0.755 0.13 85);                  /* #D4A847 dourado âmbar */
-  --gold-soft: oklch(0.92 0.025 85);             /* bege claro */
+  --surface-dark: oklch(0.36 0.09 158);          /* #006039 verde esmeralda Rolex */
+  --on-dark: oklch(0.935 0.025 85);              /* #F2EBD9 sobre escuro */
+  --gold: oklch(0.66 0.13 78);                   /* #B8860B latão / dark goldenrod */
+  --gold-soft: oklch(0.9 0.04 85);               /* bege dourado claro */
 
-  --card: oklch(0.965 0.008 85);
+  --card: oklch(0.935 0.025 85);
   --card-foreground: oklch(0.18 0 0);
-  --popover: oklch(0.965 0.008 85);
+  --popover: oklch(0.935 0.025 85);
   --popover-foreground: oklch(0.18 0 0);
 
-  --primary: oklch(0.755 0.13 85);               /* gold como primary */
+  --primary: oklch(0.66 0.13 78);                /* latão como primary */
   --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.92 0.025 85);
+  --secondary: oklch(0.9 0.04 85);
   --secondary-foreground: oklch(0.18 0 0);
-  --muted: oklch(0.93 0.015 85);
+  --muted: oklch(0.91 0.03 85);
   --muted-foreground: oklch(0.43 0 0);
-  --accent: oklch(0.755 0.13 85);
+  --accent: oklch(0.66 0.13 78);
   --accent-foreground: oklch(0.99 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.9 0.02 85);
-  --input: oklch(0.9 0.02 85);
-  --ring: oklch(0.755 0.13 85);
+  --border: oklch(0.87 0.035 85);
+  --input: oklch(0.87 0.035 85);
+  --ring: oklch(0.66 0.13 78);
 
-  --sidebar: oklch(0.965 0.008 85);
+  --sidebar: oklch(0.935 0.025 85);
   --sidebar-foreground: oklch(0.18 0 0);
-  --sidebar-primary: oklch(0.755 0.13 85);
+  --sidebar-primary: oklch(0.66 0.13 78);
   --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.92 0.025 85);
+  --sidebar-accent: oklch(0.9 0.04 85);
   --sidebar-accent-foreground: oklch(0.18 0 0);
-  --sidebar-border: oklch(0.9 0.02 85);
-  --sidebar-ring: oklch(0.755 0.13 85);
+  --sidebar-border: oklch(0.87 0.035 85);
+  --sidebar-ring: oklch(0.66 0.13 78);
 }
 
 @layer base {
