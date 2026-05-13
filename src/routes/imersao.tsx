@@ -85,7 +85,7 @@ function ImersaoPage() {
                 <>
                   <CtaDuplo
                     primaryLabel="Garantir minha vaga"
-                    secondaryLabel="Agendar conversa"
+                    secondaryLabel="Agendar conversa de 30 min"
                     formUrl={FORM_URLS.imersao}
                   />
                   <span className="text-[13px] text-[var(--color-gold)] tracking-wider border border-[var(--color-gold)] px-3 py-1.5">
@@ -210,14 +210,14 @@ function ImersaoPage() {
               {IMERSAO_ATIVA ? (
                 <CtaDuplo
                   primaryLabel="Garantir minha vaga"
-                  secondaryLabel="Agendar conversa"
+                  secondaryLabel="Tenho uma dúvida antes"
                   formUrl={FORM_URLS.imersao}
                   align="center"
                   variant="onDark"
                 />
               ) : (
                 <CtaDuplo
-                  primaryLabel="Entrar na lista de espera"
+                  primaryLabel="Quero ser avisada quando abrir"
                   formUrl={FORM_URLS.imersaoListaEspera}
                   align="center"
                   variant="onDark"
