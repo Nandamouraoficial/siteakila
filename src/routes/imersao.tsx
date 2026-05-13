@@ -78,7 +78,7 @@ function ImersaoPage() {
             </h1>
           </FadeIn>
           <FadeIn delay={240}>
-            <p className="mt-8 text-[19px] text-[var(--color-muted-foreground)] max-w-2xl leading-relaxed">
+            <p className="mt-6 text-[19px] text-[var(--color-muted-foreground)] max-w-2xl leading-relaxed">
               Um dia online. Um grupo de até 15 executivos.
               <br className="sm:hidden" /> Uma decisão.
               <br className="min-[420px]:hidden" /> Um plano para ação imediata.
