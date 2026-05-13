@@ -68,7 +68,7 @@ function ImersaoPage() {
       <Section>
         <div className="max-w-2xl">
           <FadeIn>
-            <Supratitle>Imersão Online · {DATA_EDICAO}</Supratitle>
+            <Supratitle>Imersão O Próximo Passo · Online · {DATA_EDICAO}</Supratitle>
           </FadeIn>
           <FadeIn delay={120}>
             <h1 className="mt-6 max-w-none">
