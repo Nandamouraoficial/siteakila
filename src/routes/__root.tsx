@@ -84,6 +84,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Akila Consultoria" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Akila Consultoria — Estratégia de carreira para executivos" },
+      { name: "twitter:title", content: "Akila Consultoria — Estratégia de carreira para executivos" },
+      { name: "description", content: "Akila Executive Compass is a professional website showcasing executive career consulting services." },
+      { property: "og:description", content: "Akila Executive Compass is a professional website showcasing executive career consulting services." },
+      { name: "twitter:description", content: "Akila Executive Compass is a professional website showcasing executive career consulting services." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7932bc62-3e0c-4e87-beeb-37a3a801d9cc/id-preview-16ac48a2--74751248-9e57-4947-8818-c912104344a7.lovable.app-1778639400098.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7932bc62-3e0c-4e87-beeb-37a3a801d9cc/id-preview-16ac48a2--74751248-9e57-4947-8818-c912104344a7.lovable.app-1778639400098.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
