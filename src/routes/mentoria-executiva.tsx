@@ -56,8 +56,8 @@ const SESSOES = [
   },
   {
     n: "3",
-    title: "Sustentação",
-    desc: "Consolidação do novo nível. O que você precisa para sustentar o movimento ao longo do tempo. [REVISAR]",
+    title: "Consolidação",
+    desc: "O que ficou. O que muda. O que vem depois.",
   },
 ];
 
