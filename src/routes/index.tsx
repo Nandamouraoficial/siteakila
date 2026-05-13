@@ -14,7 +14,7 @@ function WhatsAppCta({ align = "left" as "left" | "center" }) {
       >
         Fale no WhatsApp
       </a>
-      <p className="text-[14px] text-[var(--color-muted-foreground)] italic">Respondo pessoalmente.</p>
+      <p className="text-[14px]" style={{ color: "#A6A8AB" }}>Respondo pessoalmente.</p>
     </div>
   );
 }
