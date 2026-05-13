@@ -43,21 +43,90 @@ const COPY: Record<Persona, { paraQuem: string; problema: string }> = {
   },
 };
 
-const SESSOES = [
+const FASES = [
   {
-    n: "1",
-    title: "Diagnóstico real",
-    desc: "Onde você está de fato. Onde quer ir. O que está travando — mesmo que você ainda não saiba nomear.",
+    fase: "Fase 1 · Diagnóstico",
+    intro: "Mapear o ponto de partida real antes de mover qualquer peça.",
+    sessoes: [
+      {
+        n: "01",
+        title: "Linha de base executiva",
+        desc: "Histórico de carreira, padrões de decisão, momentos de inflexão. O que te trouxe até aqui — e o que já não serve.",
+      },
+      {
+        n: "02",
+        title: "Ativos e lacunas de liderança",
+        desc: "Forças, pontos cegos, percepção do entorno (pares, liderança, time). Leitura honesta da marca executiva atual.",
+      },
+      {
+        n: "03",
+        title: "Visão de destino",
+        desc: "O que você quer de verdade nos próximos 18 a 36 meses: cargo, contexto, escopo, vida. Não o que deveria querer.",
+      },
+    ],
   },
   {
-    n: "2",
-    title: "Estratégia e execução",
-    desc: "Plano. Ajustes. Desbloqueios. O movimento certo, executado com método.",
+    fase: "Fase 2 · Estratégia",
+    intro: "Transformar diagnóstico em movimento.",
+    sessoes: [
+      {
+        n: "04",
+        title: "Tese de carreira",
+        desc: "A narrativa central que conecta trajetória, competência distintiva e próximo capítulo. O fio condutor que orienta toda decisão.",
+      },
+      {
+        n: "05",
+        title: "Mapa de oportunidades",
+        desc: "Setores, empresas, cargos, formatos (CLT, conselho, sócio, internacional). Critérios de sim e de não.",
+      },
+      {
+        n: "06",
+        title: "Plano de 90 dias",
+        desc: "Marcos, entregáveis, indicadores. O que precisa estar pronto até o fim do ciclo.",
+      },
+    ],
   },
   {
-    n: "3",
-    title: "Consolidação",
-    desc: "O que ficou. O que muda. O que vem depois.",
+    fase: "Fase 3 · Execução com mercado",
+    intro: "Onde a maioria dos programas para. Aqui o trabalho fica concreto.",
+    sessoes: [
+      {
+        n: "07",
+        title: "Marca executiva e presença digital",
+        desc: "LinkedIn, bio, narrativa pública. Como você aparece quando pesquisam seu nome.",
+      },
+      {
+        n: "08",
+        title: "Rede estratégica",
+        desc: "Mapeamento de quem precisa te conhecer, abordagem, reativação inteligente. Networking executivo — não café aleatório.",
+      },
+      {
+        n: "09",
+        title: "Conversas decisivas",
+        desc: "Headhunters, board members, recrutadores internos, sponsors. Como conduzir entrevistas e negociações nesse nível.",
+      },
+      {
+        n: "10",
+        title: "Negociação e proposta",
+        desc: "Pacote, contraoferta, equity, governança. Treinamento de cenários reais que vão aparecer.",
+      },
+    ],
+  },
+  {
+    fase: "Fase 4 · Consolidação",
+    intro: "Garantir que o movimento se sustenta depois da mentoria.",
+    sessoes: [
+      {
+        n: "11",
+        title: "Primeiros 90 dias no novo movimento",
+        desc: "Plano de entrada — mesmo que ainda esteja em transição. Onboarding, leitura de cultura, stakeholders críticos.",
+      },
+      {
+        n: "12",
+        title: "Plano de continuidade",
+        desc: "O que segue além da mentoria: rituais de revisão, aliados estratégicos, próximos pontos de inflexão. Você sai com método, não com dependência.",
+      },
+    ],
   },
 ];
 
