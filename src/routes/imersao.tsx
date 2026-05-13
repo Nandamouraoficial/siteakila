@@ -12,13 +12,13 @@ export const Route = createFileRoute("/imersao")({
       {
         name: "description",
         content:
-          "Um dia online. Um grupo de até 15 mulheres executivas. Uma decisão. Imersão para clareza sobre seu próximo movimento.",
+          "Um dia online. Um grupo de até 15 executivos. Uma decisão. Imersão para clareza sobre seu próximo movimento.",
       },
       { property: "og:title", content: "Imersão O Próximo Passo — Akila" },
       {
         property: "og:description",
         content:
-          "Um dia. Um grupo de até 15 mulheres executivas. Clareza sobre o próximo passo.",
+          "Um dia. Um grupo de até 15 executivos. Clareza sobre o próximo passo.",
       },
     ],
   }),
@@ -77,7 +77,7 @@ function ImersaoPage() {
           </FadeIn>
           <FadeIn delay={240}>
             <p className="mt-6 text-[19px] text-[var(--color-muted-foreground)] max-w-2xl leading-relaxed">
-              Um dia online. Um grupo de até 15 mulheres executivas. Uma decisão.
+              Um dia online. Um grupo de até 15 executivos. Uma decisão.
             </p>
           </FadeIn>
           <FadeIn delay={360}>
