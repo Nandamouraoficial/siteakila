@@ -84,8 +84,8 @@ export const Route = createFileRoute("/mentoria-negocios")({
         </div>
       }
       ctaFinalHeadline="O próximo capítulo do seu negócio merece uma conversa estratégica."
-      ctaFinalPrimary="Quero conversar"
-      ctaFinalSecondary="Agendar 30 minutos com a Fernanda"
+      ctaFinalPrimary="Quero tirar dúvidas"
+      ctaFinalSecondary="Agendar diagnóstico gratuito de 30 minutos"
     />
   ),
 });
