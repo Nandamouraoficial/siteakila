@@ -90,11 +90,7 @@ function Index() {
             </FadeIn>
             <FadeIn delay={360}>
               <div className="mt-10">
-                <CtaDuplo
-                  primaryLabel="Quero conversar"
-                  secondaryLabel="Agendar 30 minutos"
-                  formUrl={FORM_URLS.geral}
-                />
+                <WhatsAppCta />
               </div>
             </FadeIn>
           </div>
@@ -198,12 +194,7 @@ function Index() {
           </FadeIn>
           <FadeIn delay={120}>
             <div className="mt-10 flex justify-center">
-              <CtaDuplo
-                primaryLabel="Quero conversar"
-                secondaryLabel="Agendar 30 minutos"
-                formUrl={FORM_URLS.geral}
-                align="center"
-              />
+              <WhatsAppCta align="center" />
             </div>
           </FadeIn>
         </div>
