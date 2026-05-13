@@ -145,7 +145,7 @@ function MentoriaExecutiva() {
       <Section variant="dark">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
-            <h2 className="text-[var(--color-gold)]">O que esse nível exige</h2>
+            <h2 className="text-[var(--color-gold)]">O problema real</h2>
           </FadeIn>
           <p
             key={`pr-${persona}`}
