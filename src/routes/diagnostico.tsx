@@ -30,7 +30,7 @@ export const Route = createFileRoute("/diagnostico")({
       headline={<>Seu LinkedIn está abrindo portas — ou fechando?</>}
       subheadline="Duas horas de análise honesta. Um relatório que você vai usar."
       heroPrimary="Quero agendar meu diagnóstico"
-      heroSupport="Após o preenchimento, a Fernanda entra em contato com o link de pagamento e agenda a sessão."
+      heroSupport="Após o preenchimento do formulário, você receberá os links para pagamento e agendamento."
       singleCta
       formUrl={FORM_URLS.diagnostico}
       paraQuem={
@@ -110,7 +110,7 @@ export const Route = createFileRoute("/diagnostico")({
       }
       ctaFinalHeadline="Quanto mais cedo você souber, mais cedo muda."
       ctaFinalPrimary="Quero agendar meu diagnóstico"
-      ctaFinalSupport="Após o preenchimento, a Fernanda entra em contato com o link de pagamento e agenda a sessão."
+      ctaFinalSupport="Após o preenchimento do formulário, você receberá os links para pagamento e agendamento."
     />
   ),
 });
