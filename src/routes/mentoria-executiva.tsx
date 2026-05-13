@@ -244,25 +244,47 @@ function MentoriaExecutiva() {
       {/* COMO FUNCIONA */}
       <Section>
         <FadeIn>
-          <Supratitle>Como funciona — 3 sessões</Supratitle>
+          <Supratitle>Como funciona — 12 sessões em 4 fases</Supratitle>
         </FadeIn>
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-10">
-          {SESSOES.map((s, i) => (
-            <FadeIn key={i} delay={i * 100}>
-              <div className="border-t-[3px] border-[var(--color-gold)] pt-6">
-                <p className="font-serif text-[40px] text-[var(--color-gold-soft)] leading-none">
-                  0{s.n}
-                </p>
-                <h3 className="mt-3 font-serif text-[22px] text-[var(--color-foreground)]">
-                  Sessão {s.n} · {s.title}
-                </h3>
-                <p className="mt-3 text-[15px] text-[var(--color-muted-foreground)] leading-relaxed">
-                  {s.desc}
-                </p>
+        <div className="mt-12 space-y-16">
+          {FASES.map((f, fi) => (
+            <FadeIn key={fi} delay={fi * 80}>
+              <div>
+                <div className="max-w-3xl">
+                  <h3 className="font-serif text-[24px] text-[var(--color-foreground)]">
+                    {f.fase}
+                  </h3>
+                  <p className="mt-2 text-[15px] text-[var(--color-muted-foreground)] italic">
+                    {f.intro}
+                  </p>
+                </div>
+                <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-10">
+                  {f.sessoes.map((s) => (
+                    <div
+                      key={s.n}
+                      className="border-t-[3px] border-[var(--color-gold)] pt-6"
+                    >
+                      <p className="font-serif text-[40px] text-[var(--color-gold-soft)] leading-none">
+                        {s.n}
+                      </p>
+                      <h4 className="mt-3 font-serif text-[20px] text-[var(--color-foreground)]">
+                        Sessão {s.n} · {s.title}
+                      </h4>
+                      <p className="mt-3 text-[15px] text-[var(--color-muted-foreground)] leading-relaxed">
+                        {s.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </FadeIn>
           ))}
         </div>
+        <FadeIn delay={400}>
+          <p className="mt-12 text-[14px] text-[var(--color-muted-foreground)] tracking-wider">
+            Sessões quinzenais de 2h · Online · Material e tarefas entre encontros
+          </p>
+        </FadeIn>
       </Section>
 
       {/* CTA FINAL */}
