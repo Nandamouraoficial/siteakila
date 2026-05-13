@@ -25,8 +25,9 @@ export const Route = createFileRoute("/imersao")({
   component: ImersaoPage,
 });
 
-const IMERSAO_ATIVA = false;
+const IMERSAO_ATIVA = true;
 const VAGAS = 15;
+const DATA_EDICAO = "27 de junho";
 
 const MOMENTOS = [
   {
@@ -67,7 +68,7 @@ function ImersaoPage() {
       <Section>
         <div className="max-w-4xl">
           <FadeIn>
-            <Supratitle>Imersão Online · Um dia · Até 15 participantes</Supratitle>
+            <Supratitle>Imersão Online · {DATA_EDICAO} · Até {VAGAS} participantes</Supratitle>
           </FadeIn>
           <FadeIn delay={120}>
             <h1 className="mt-6">
