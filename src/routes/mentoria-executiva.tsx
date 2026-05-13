@@ -27,18 +27,19 @@ export const Route = createFileRoute("/mentoria-executiva")({
 
 type Persona = "gerentes" | "diretores";
 
+const PROBLEMA_COPY =
+  "Nesse nível, raramente existe alguém com quem falar de verdade. Sem ter que proteger imagem. Sem filtro de hierarquia. Alguém que já esteve onde você quer chegar — e pode dizer o que realmente está em jogo.";
+
 const COPY: Record<Persona, { paraQuem: string; problema: string }> = {
   gerentes: {
     paraQuem:
-      "Para gerentes prontos para o salto para a diretoria — que entregam resultado mas não sabem exatamente o que falta para o próximo nível, nem como dar esse salto sem errar a jogada.",
-    problema:
-      "Nesse momento da carreira, o que te trouxe até aqui pode não ser o que vai te levar ao próximo nível. As habilidades mudam. O jogo muda. E raramente existe alguém que já fez esse trajeto e pode te dizer o que realmente está em jogo.",
+      "Você entrega. Você lidera. E sente que está pronto para o próximo nível — mas não sabe exatamente o que falta, nem como dar esse salto sem errar a jogada.",
+    problema: PROBLEMA_COPY,
   },
   diretores: {
     paraQuem:
-      "Para diretores e VPs em transição, expansão ou consolidação. O jogo mudou — de novo. E o que é certo agora não é óbvio. Tampouco existe alguém na sua estrutura com quem conversar sem filtro político.",
-    problema:
-      "Nesse nível, raramente existe alguém com quem falar de verdade. Sem ter que proteger imagem. Sem filtro de hierarquia. Alguém que já esteve onde você quer chegar — e pode dizer o que realmente está em jogo.",
+      "Você já chegou. E agora o jogo mudou — de novo. Transição, expansão, consolidação: o que é certo nesse momento não é óbvio. E não existe alguém na sua estrutura com quem conversar sem filtro político.",
+    problema: PROBLEMA_COPY,
   },
 };
 
@@ -55,8 +56,8 @@ const SESSOES = [
   },
   {
     n: "3",
-    title: "Sustentação",
-    desc: "Consolidação do novo nível. O que você precisa para sustentar o movimento ao longo do tempo. [REVISAR]",
+    title: "Consolidação",
+    desc: "O que ficou. O que muda. O que vem depois.",
   },
 ];
 
@@ -144,7 +145,7 @@ function MentoriaExecutiva() {
       <Section variant="dark">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
-            <h2 className="text-[var(--color-gold)]">O que esse nível exige</h2>
+            <h2 className="text-[var(--color-gold)]">O problema real</h2>
           </FadeIn>
           <p
             key={`pr-${persona}`}
