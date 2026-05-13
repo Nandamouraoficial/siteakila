@@ -90,8 +90,8 @@ function ImersaoPage() {
                 <>
                   <CtaDuplo
                     primaryLabel="Garantir minha vaga"
-                    secondaryLabel="Agendar conversa de 30 min"
                     formUrl={FORM_URLS.imersao}
+                    singleMode
                   />
                   <span className="text-[13px] text-[var(--color-gold)] tracking-wider border border-[var(--color-gold)] px-3 py-1.5">
                     {VAGAS} VAGAS DISPONÍVEIS
