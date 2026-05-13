@@ -12,7 +12,7 @@ export const Route = createFileRoute("/mentoria-executiva")({
       {
         name: "description",
         content:
-          "90 dias. 12 sessões. Estratégia real para gerentes, diretores e VPs em movimento decisivo de carreira.",
+          "90 dias. 6 encontros quinzenais de 2h. Estratégia real para gerentes, diretores e VPs em movimento decisivo de carreira.",
       },
       { property: "og:title", content: "Mentoria Executiva — Akila" },
       {
@@ -139,7 +139,7 @@ function MentoriaExecutiva() {
         <div className="max-w-4xl">
           <FadeIn>
             <Supratitle>
-              Mentoria Executiva · 90 dias · 12 sessões
+              Mentoria Executiva · 90 dias · 6 encontros quinzenais de 2h
             </Supratitle>
           </FadeIn>
           <FadeIn delay={120}>
@@ -149,7 +149,7 @@ function MentoriaExecutiva() {
           </FadeIn>
           <FadeIn delay={240}>
             <p className="mt-6 text-[19px] text-[var(--color-muted-foreground)] max-w-2xl leading-relaxed">
-              90 dias. 12 sessões. O movimento que você precisa
+              90 dias. 6 encontros quinzenais de 2h. O movimento que você precisa
               fazer — com suporte real para executá-lo.
             </p>
           </FadeIn>
@@ -214,7 +214,7 @@ function MentoriaExecutiva() {
       {/* COMO FUNCIONA */}
       <Section>
         <FadeIn>
-          <Supratitle>Como funciona — 12 sessões em 4 fases</Supratitle>
+          <Supratitle>Como funciona — 6 encontros em 4 fases</Supratitle>
         </FadeIn>
         <div className="mt-12 space-y-16">
           {FASES.map((f, fi) => (
