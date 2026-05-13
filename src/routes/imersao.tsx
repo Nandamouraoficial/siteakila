@@ -66,19 +66,19 @@ function ImersaoPage() {
 
       {/* HERO */}
       <Section>
-        <div className="max-w-4xl">
+        <div className="max-w-2xl">
           <FadeIn>
             <Supratitle>Imersão Online · {DATA_EDICAO}</Supratitle>
           </FadeIn>
           <FadeIn delay={120}>
-            <h1 className="mt-8">
+            <h1 className="mt-6">
               Você sabe que tem um próximo passo.
               <br />
               Falta clareza para dar.
             </h1>
           </FadeIn>
           <FadeIn delay={240}>
-            <p className="mt-6 text-[19px] text-[var(--color-muted-foreground)] max-w-2xl leading-relaxed">
+            <p className="mt-6 text-[19px] text-[var(--color-muted-foreground)] leading-relaxed">
               Um dia online. Um grupo de até 15 executivos.
               <br className="sm:hidden" /> Uma decisão.
               <br className="min-[420px]:hidden" /> Um plano para ação imediata.
