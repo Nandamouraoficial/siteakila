@@ -5,7 +5,7 @@ export const CALENDLY_URL = "https://calendly.com/fernandamoura/30min";
 
 export const FORM_URLS = {
   geral: "[GOOGLE_FORM_URL_GERAL]",
-  imersao: "[GOOGLE_FORM_URL_IMERSAO]",
+  imersao: "https://oppjunho.lovable.app",
   imersaoListaEspera: "[GOOGLE_FORM_URL_IMERSAO_LISTA_ESPERA]",
   diagnostico: "[GOOGLE_FORM_URL_DIAGNOSTICO]",
   comunicador: "[GOOGLE_FORM_URL_COMUNICADOR]",
