@@ -26,8 +26,8 @@ export const Route = createFileRoute("/palestrante")({
         <>Você entra numa sala e as pessoas sentem. Isso não é sorte — é presença.</>
       }
       subheadline="A diferença entre quem apresenta e quem conecta não é o conteúdo. É o que acontece antes, durante e depois das palavras."
-      heroPrimary="Quero saber mais"
-      heroSecondary="Agendar conversa"
+      heroPrimary="Quero tirar dúvidas"
+      singleCta
       formUrl={FORM_URLS.palestrante}
       paraQuem={
         <p>
@@ -63,8 +63,7 @@ export const Route = createFileRoute("/palestrante")({
         </div>
       }
       ctaFinalHeadline="Presença de palco não se improvisa. Se constrói."
-      ctaFinalPrimary="Quero conversar sobre isso"
-      ctaFinalSecondary="Agendar 30 minutos com a Fernanda"
+      ctaFinalPrimary="Quero tirar dúvidas"
     />
   ),
 });

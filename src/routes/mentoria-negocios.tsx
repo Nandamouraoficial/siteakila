@@ -31,8 +31,8 @@ export const Route = createFileRoute("/mentoria-negocios")({
         </>
       }
       subheadline="Mentoria estratégica para empresários e fundadores que precisam de clareza, método e perspectiva externa para o próximo movimento do negócio. [REVISAR]"
-      heroPrimary="Quero conversar"
-      heroSecondary="Agendar 30 minutos"
+      heroPrimary="Quero tirar dúvidas"
+      heroSecondary="Agendar diagnóstico gratuito de 30 minutos"
       formUrl={FORM_URLS.mentoriaNegocios}
       paraQuem={
         <p>
