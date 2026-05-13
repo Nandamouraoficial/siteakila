@@ -71,10 +71,13 @@ function ImersaoPage() {
             <Supratitle>Imersão Online · {DATA_EDICAO}</Supratitle>
           </FadeIn>
           <FadeIn delay={120}>
-            <h1 className="mt-6">
-              Você sabe que tem um próximo passo.
-              <br />
-              Falta clareza para dar.
+            <h1 className="mt-6 max-w-none">
+              <span className="block sm:whitespace-nowrap">
+                Você sabe que tem um próximo passo.
+              </span>
+              <span className="block sm:whitespace-nowrap">
+                Falta clareza para dar.
+              </span>
             </h1>
           </FadeIn>
           <FadeIn delay={240}>
