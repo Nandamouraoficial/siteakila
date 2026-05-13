@@ -14,7 +14,7 @@ function WhatsAppCta({ align = "left" as "left" | "center" }) {
       >
         Fale no WhatsApp
       </a>
-      <p className="text-[14px] text-[var(--color-muted-foreground)] italic">Respondo pessoalmente.</p>
+      <p className="text-[14px]" style={{ color: "#A6A8AB" }}>Respondo pessoalmente.</p>
     </div>
   );
 }
@@ -131,7 +131,7 @@ function Index() {
       </Section>
 
       {/* PRODUTOS */}
-      <Section>
+      <Section id="produtos">
         <FadeIn>
           <h2 className="text-center mb-16">Como posso ajudar</h2>
         </FadeIn>
@@ -197,6 +197,65 @@ function Index() {
               <WhatsAppCta align="center" />
             </div>
           </FadeIn>
+        </div>
+      </Section>
+
+      {/* SOBRE A FUNDADORA */}
+      <Section className="!bg-[#F2EBD9]">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-16 items-start">
+          <div className="md:col-span-2">
+            <FadeIn>
+              <div className="aspect-[4/5] w-full rounded-2xl bg-[#006039] flex items-center justify-center text-[var(--color-on-dark)] text-sm tracking-wider">
+                [FOTO_FERNANDA]
+              </div>
+            </FadeIn>
+            <FadeIn delay={120}>
+              <p className="mt-6 text-[12px] uppercase tracking-[0.2em] text-[#B8860B] leading-relaxed">
+                Unilever · Coca-Cola · Kraft Heinz · BRF · Kimberly-Clark · Cargill · Itaú
+              </p>
+            </FadeIn>
+          </div>
+
+          <div className="md:col-span-3">
+            <FadeIn>
+              <div className="h-[2px] w-10 bg-[#B8860B]" />
+              <p className="mt-6 supratitle">Sobre a fundadora</p>
+            </FadeIn>
+            <FadeIn delay={120}>
+              <h2 className="mt-6 font-serif font-bold text-[#1A1A1A]">
+                Fui executiva em Coca-Cola, Unilever, Kraft Heinz e BRF por 26 anos.
+                Sei exatamente o que separa quem avança de quem fica.
+              </h2>
+            </FadeIn>
+            <FadeIn delay={240}>
+              <div className="mt-8 space-y-5 text-[17px] leading-[1.8] text-[#1A1A1A]">
+                <p>
+                  Liderança de times em 15 países. Diretoria para a América Latina.
+                  Mais de 50 plantas industriais sob responsabilidade. Apresentações
+                  ao Conselho de Administração. 23 transições ao longo da carreira —
+                  não 23 demissões. 23 decisões.
+                </p>
+                <p>
+                  Em determinado momento, percebi o padrão que se repetia em volta:
+                  profissionais com histórico sólido, entrega consistente e resultado
+                  real — travados não por falta de competência, mas por excesso de inércia.
+                </p>
+                <p>A gaiola de ouro é real. Eu morei nela.</p>
+                <p>
+                  E foi exatamente por isso que criei a Akila: para que nenhum executivo
+                  competente pague o custo de adiar uma decisão que já deveria ter sido tomada.
+                </p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={360}>
+              <a
+                href="#produtos"
+                className="mt-10 inline-flex items-center justify-center border border-[#006039] text-[#006039] bg-transparent px-7 py-3.5 text-[15px] font-medium tracking-wide transition-colors hover:bg-[#006039] hover:text-[var(--color-on-dark)]"
+              >
+                Conheça os programas
+              </a>
+            </FadeIn>
+          </div>
         </div>
       </Section>
     </>
