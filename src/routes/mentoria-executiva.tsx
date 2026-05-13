@@ -50,18 +50,8 @@ const FASES = [
     sessoes: [
       {
         n: "01",
-        title: "Linha de base executiva",
-        desc: "Histórico de carreira, padrões de decisão, momentos de inflexão. O que te trouxe até aqui — e o que já não serve.",
-      },
-      {
-        n: "02",
-        title: "Ativos e lacunas de liderança",
-        desc: "Forças, pontos cegos, percepção do entorno (pares, liderança, time). Leitura honesta da marca executiva atual.",
-      },
-      {
-        n: "03",
-        title: "Visão de destino",
-        desc: "O que você quer de verdade nos próximos 18 a 36 meses: cargo, contexto, escopo, vida. Não o que deveria querer.",
+        title: "Linha de base e visão de destino",
+        desc: "Histórico, padrões de decisão e ativos de liderança. O que te trouxe até aqui — e onde você quer estar nos próximos 18 a 36 meses. Não o que deveria querer.",
       },
     ],
   },
@@ -70,19 +60,14 @@ const FASES = [
     intro: "Transformar diagnóstico em movimento.",
     sessoes: [
       {
-        n: "04",
-        title: "Tese de carreira",
-        desc: "A narrativa central que conecta trajetória, competência distintiva e próximo capítulo. O fio condutor que orienta toda decisão.",
+        n: "02",
+        title: "Tese de carreira e mapa de oportunidades",
+        desc: "A narrativa central que conecta trajetória e próximo capítulo. Setores, empresas, cargos e formatos (CLT, conselho, sócio, internacional). Critérios de sim e de não.",
       },
       {
-        n: "05",
-        title: "Mapa de oportunidades",
-        desc: "Setores, empresas, cargos, formatos (CLT, conselho, sócio, internacional). Critérios de sim e de não.",
-      },
-      {
-        n: "06",
+        n: "03",
         title: "Plano de 90 dias",
-        desc: "Marcos, entregáveis, indicadores. O que precisa estar pronto até o fim do ciclo.",
+        desc: "Marcos, entregáveis, indicadores. O que precisa estar pronto até o fim do ciclo — e como executar entre as sessões.",
       },
     ],
   },
@@ -91,24 +76,14 @@ const FASES = [
     intro: "Onde a maioria dos programas para. Aqui o trabalho fica concreto.",
     sessoes: [
       {
-        n: "07",
-        title: "Marca executiva e presença digital",
-        desc: "LinkedIn, bio, narrativa pública. Como você aparece quando pesquisam seu nome.",
+        n: "04",
+        title: "Marca executiva e rede estratégica",
+        desc: "LinkedIn, bio e narrativa pública. Mapeamento de quem precisa te conhecer, abordagem e reativação inteligente. Networking executivo — não café aleatório.",
       },
       {
-        n: "08",
-        title: "Rede estratégica",
-        desc: "Mapeamento de quem precisa te conhecer, abordagem, reativação inteligente. Networking executivo — não café aleatório.",
-      },
-      {
-        n: "09",
-        title: "Conversas decisivas",
-        desc: "Headhunters, board members, recrutadores internos, sponsors. Como conduzir entrevistas e negociações nesse nível.",
-      },
-      {
-        n: "10",
-        title: "Negociação e proposta",
-        desc: "Pacote, contraoferta, equity, governança. Treinamento de cenários reais que vão aparecer.",
+        n: "05",
+        title: "Conversas decisivas e negociação",
+        desc: "Headhunters, board members, sponsors. Como conduzir entrevistas, propostas, contraoferta, pacote e governança. Treinamento de cenários reais.",
       },
     ],
   },
@@ -117,14 +92,9 @@ const FASES = [
     intro: "Garantir que o movimento se sustenta depois da mentoria.",
     sessoes: [
       {
-        n: "11",
-        title: "Primeiros 90 dias no novo movimento",
-        desc: "Plano de entrada — mesmo que ainda esteja em transição. Onboarding, leitura de cultura, stakeholders críticos.",
-      },
-      {
-        n: "12",
-        title: "Plano de continuidade",
-        desc: "O que segue além da mentoria: rituais de revisão, aliados estratégicos, próximos pontos de inflexão. Você sai com método, não com dependência.",
+        n: "06",
+        title: "Entrada e plano de continuidade",
+        desc: "Onboarding no novo movimento, leitura de cultura, stakeholders críticos. Rituais de revisão e aliados estratégicos para os próximos pontos de inflexão. Você sai com método, não com dependência.",
       },
     ],
   },
