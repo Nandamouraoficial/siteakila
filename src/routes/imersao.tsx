@@ -72,7 +72,9 @@ function ImersaoPage() {
           </FadeIn>
           <FadeIn delay={120}>
             <h1 className="mt-6">
-              Você sabe que tem um próximo passo. Falta clareza para dar.
+              Você sabe que tem um próximo passo.
+              <br />
+              Falta clareza para dar.
             </h1>
           </FadeIn>
           <FadeIn delay={240}>
