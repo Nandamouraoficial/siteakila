@@ -25,8 +25,9 @@ export const Route = createFileRoute("/imersao")({
   component: ImersaoPage,
 });
 
-const IMERSAO_ATIVA = false;
+const IMERSAO_ATIVA = true;
 const VAGAS = 15;
+const DATA_EDICAO = "27 de junho";
 
 const MOMENTOS = [
   {
