@@ -3,6 +3,10 @@
 
 export const CALENDLY_URL = "https://calendly.com/fernandamoura/30min";
 
+// Substitua pelo número internacional sem "+", ex: "5511999999999"
+export const WHATSAPP_NUMBER = "[WHATSAPP_NUMBER]";
+export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
+
 export const FORM_URLS = {
   geral: "[GOOGLE_FORM_URL_GERAL]",
   imersao: "https://oppjunho.lovable.app",

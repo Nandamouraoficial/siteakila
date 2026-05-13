@@ -1,8 +1,23 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, Supratitle } from "@/components/Section";
-import { CtaDuplo } from "@/components/CtaDuplo";
 import { FadeIn } from "@/components/FadeIn";
-import { FORM_URLS, PRODUCTS } from "@/lib/site-config";
+import { PRODUCTS, WHATSAPP_URL } from "@/lib/site-config";
+
+function WhatsAppCta({ align = "left" as "left" | "center" }) {
+  return (
+    <div className={align === "center" ? "flex flex-col items-center gap-3" : "flex flex-col items-start gap-3"}>
+      <a
+        href={WHATSAPP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center justify-center bg-[var(--color-gold)] text-white px-7 py-3.5 text-[15px] font-semibold tracking-wide transition-colors hover:bg-[var(--color-foreground)]"
+      >
+        Fale no WhatsApp
+      </a>
+      <p className="text-[14px] text-[var(--color-muted-foreground)] italic">Respondo pessoalmente.</p>
+    </div>
+  );
+}
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -75,11 +90,7 @@ function Index() {
             </FadeIn>
             <FadeIn delay={360}>
               <div className="mt-10">
-                <CtaDuplo
-                  primaryLabel="Quero conversar"
-                  secondaryLabel="Agendar 30 minutos"
-                  formUrl={FORM_URLS.geral}
-                />
+                <WhatsAppCta />
               </div>
             </FadeIn>
           </div>
@@ -183,12 +194,7 @@ function Index() {
           </FadeIn>
           <FadeIn delay={120}>
             <div className="mt-10 flex justify-center">
-              <CtaDuplo
-                primaryLabel="Quero conversar"
-                secondaryLabel="Agendar 30 minutos"
-                formUrl={FORM_URLS.geral}
-                align="center"
-              />
+              <WhatsAppCta align="center" />
             </div>
           </FadeIn>
         </div>

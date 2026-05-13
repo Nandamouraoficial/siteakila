@@ -215,10 +215,10 @@ function ImersaoPage() {
               {IMERSAO_ATIVA ? (
                 <CtaDuplo
                   primaryLabel="Garantir minha vaga"
-                  secondaryLabel="Tenho uma dúvida antes"
                   formUrl={FORM_URLS.imersao}
                   align="center"
                   variant="onDark"
+                  singleMode
                 />
               ) : (
                 <CtaDuplo

@@ -11,7 +11,7 @@ export const Route = createFileRoute("/diagnostico")({
       {
         name: "description",
         content:
-          "Uma hora de análise honesta do seu LinkedIn + relatório escrito com prioridades. Diagnóstico executivo com Fernanda Moura.",
+          "Duas horas de análise honesta do seu LinkedIn + relatório escrito com prioridades. Diagnóstico executivo com Fernanda Moura.",
       },
       {
         property: "og:title",
@@ -20,17 +20,18 @@ export const Route = createFileRoute("/diagnostico")({
       {
         property: "og:description",
         content:
-          "Uma hora de análise honesta. Um relatório escrito que você vai usar.",
+          "Duas horas de análise honesta. Um relatório escrito que você vai usar.",
       },
     ],
   }),
   component: () => (
     <ProductPageShell
-      supratitle="Diagnóstico · 1 hora + relatório escrito"
+      supratitle="Diagnóstico · 2 horas + relatório escrito"
       headline={<>Seu LinkedIn está abrindo portas — ou fechando?</>}
-      subheadline="Uma hora de análise honesta. Um relatório que você vai usar."
-      heroPrimary="Agendar meu diagnóstico"
-      heroSecondary="Tenho uma dúvida antes"
+      subheadline="Duas horas de análise honesta. Um relatório que você vai usar."
+      heroPrimary="Quero agendar meu diagnóstico"
+      heroSupport="Após o preenchimento, a Fernanda entra em contato com o link de pagamento e agenda a sessão."
+      singleCta
       formUrl={FORM_URLS.diagnostico}
       paraQuem={
         <p>
@@ -51,7 +52,7 @@ export const Route = createFileRoute("/diagnostico")({
       transformacaoTitle="O que você recebe"
       transformacao={
         <p>
-          Em 1 hora você recebe uma leitura completa e honesta da sua presença
+          Em 2 horas você recebe uma leitura completa e honesta da sua presença
           executiva. Sem eufemismo. E um relatório escrito com o que mudar — por
           prioridade, não por perfeccionismo.
         </p>
@@ -65,7 +66,7 @@ export const Route = createFileRoute("/diagnostico")({
             {[
               {
                 step: "1",
-                title: "Sessão online de 1h",
+                title: "Sessão online de 2h",
                 desc: "Análise completa do perfil ao vivo com Fernanda.",
               },
               {
@@ -108,8 +109,8 @@ export const Route = createFileRoute("/diagnostico")({
         </FadeIn>
       }
       ctaFinalHeadline="Quanto mais cedo você souber, mais cedo muda."
-      ctaFinalPrimary="Agendar meu diagnóstico"
-      ctaFinalSecondary="Falar com a Fernanda antes"
+      ctaFinalPrimary="Quero agendar meu diagnóstico"
+      ctaFinalSupport="Após o preenchimento, a Fernanda entra em contato com o link de pagamento e agenda a sessão."
     />
   ),
 });

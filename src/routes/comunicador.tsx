@@ -26,8 +26,8 @@ export const Route = createFileRoute("/comunicador")({
         <>Você tem muito a dizer. O que falta é parar de travar na hora de dizer.</>
       }
       subheadline="Comunicação magnética não é dom. É habilidade. E habilidade se aprende."
-      heroPrimary="Quero saber mais"
-      heroSecondary="Agendar conversa"
+      heroPrimary="Quero tirar dúvidas"
+      singleCta
       formUrl={FORM_URLS.comunicador}
       paraQuem={
         <p>
@@ -68,8 +68,7 @@ export const Route = createFileRoute("/comunicador")({
         </div>
       }
       ctaFinalHeadline="A câmera não é o problema. Vamos descobrir o que é."
-      ctaFinalPrimary="Quero conversar sobre isso"
-      ctaFinalSecondary="Agendar 30 minutos com a Fernanda"
+      ctaFinalPrimary="Quero tirar dúvidas"
     />
   ),
 });

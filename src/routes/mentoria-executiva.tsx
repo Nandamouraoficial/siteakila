@@ -117,8 +117,8 @@ function MentoriaExecutiva() {
           <FadeIn delay={360}>
             <div className="mt-10">
               <CtaDuplo
-                primaryLabel="Quero conversar"
-                secondaryLabel="Agendar 30 minutos"
+                primaryLabel="Quero tirar dúvidas"
+                secondaryLabel="Agendar diagnóstico gratuito de 30 minutos"
                 formUrl={FORM_URLS.mentoriaExecutiva}
               />
             </div>
@@ -207,8 +207,8 @@ function MentoriaExecutiva() {
           <FadeIn delay={120}>
             <div className="mt-10 flex justify-center">
               <CtaDuplo
-                primaryLabel="Quero conversar"
-                secondaryLabel="Agendar 30 minutos"
+                primaryLabel="Quero tirar dúvidas"
+                secondaryLabel="Agendar diagnóstico gratuito de 30 minutos"
                 formUrl={FORM_URLS.mentoriaExecutiva}
                 align="center"
                 variant="onDark"

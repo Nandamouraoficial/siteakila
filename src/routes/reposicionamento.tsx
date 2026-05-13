@@ -28,8 +28,8 @@ export const Route = createFileRoute("/reposicionamento")({
         <>Seu LinkedIn precisa trabalhar por você enquanto você não está online.</>
       }
       subheadline="3 sessões. Perfil reescrito. Estratégia definida. As oportunidades certas chegando — sem você precisar ficar postando todo dia."
-      heroPrimary="Quero reposicionar meu perfil"
-      heroSecondary="Agendar conversa"
+      heroPrimary="Quero tirar dúvidas"
+      heroSecondary="Agendar diagnóstico gratuito de 30 minutos"
       formUrl={FORM_URLS.reposicionamento}
       paraQuem={
         <p>
@@ -109,8 +109,8 @@ export const Route = createFileRoute("/reposicionamento")({
         </FadeIn>
       }
       ctaFinalHeadline="Seu perfil hoje está te ajudando ou te custando oportunidades?"
-      ctaFinalPrimary="Quero reposicionar meu perfil"
-      ctaFinalSecondary="Agendar conversa com a Fernanda"
+      ctaFinalPrimary="Quero tirar dúvidas"
+      ctaFinalSecondary="Agendar diagnóstico gratuito de 30 minutos"
     />
   ),
 });

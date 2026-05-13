@@ -8,7 +8,8 @@ interface ProductPageProps {
   headline: ReactNode;
   subheadline: string;
   heroPrimary: string;
-  heroSecondary: string;
+  heroSecondary?: string;
+  heroSupport?: string;
   formUrl: string;
   paraQuemTitle?: string;
   paraQuem: ReactNode;
@@ -20,7 +21,9 @@ interface ProductPageProps {
   extraBlock?: ReactNode;
   ctaFinalHeadline: string;
   ctaFinalPrimary: string;
-  ctaFinalSecondary: string;
+  ctaFinalSecondary?: string;
+  ctaFinalSupport?: string;
+  singleCta?: boolean;
   topBanner?: ReactNode;
 }
 
@@ -30,6 +33,7 @@ export function ProductPageShell({
   subheadline,
   heroPrimary,
   heroSecondary,
+  heroSupport,
   formUrl,
   paraQuemTitle = "Para quem é",
   paraQuem,
@@ -42,6 +46,8 @@ export function ProductPageShell({
   ctaFinalHeadline,
   ctaFinalPrimary,
   ctaFinalSecondary,
+  ctaFinalSupport,
+  singleCta = false,
   topBanner,
 }: ProductPageProps) {
   return (
@@ -68,7 +74,13 @@ export function ProductPageShell({
                 primaryLabel={heroPrimary}
                 secondaryLabel={heroSecondary}
                 formUrl={formUrl}
+                singleMode={singleCta}
               />
+              {heroSupport && (
+                <p className="mt-4 text-[14px] text-[var(--color-muted-foreground)] italic">
+                  {heroSupport}
+                </p>
+              )}
             </div>
           </FadeIn>
         </div>
@@ -129,14 +141,20 @@ export function ProductPageShell({
             <h2 className="text-[var(--color-on-dark)]">{ctaFinalHeadline}</h2>
           </FadeIn>
           <FadeIn delay={120}>
-            <div className="mt-10 flex justify-center">
+            <div className="mt-10 flex flex-col items-center gap-4">
               <CtaDuplo
                 primaryLabel={ctaFinalPrimary}
                 secondaryLabel={ctaFinalSecondary}
                 formUrl={formUrl}
                 align="center"
                 variant="onDark"
+                singleMode={singleCta}
               />
+              {ctaFinalSupport && (
+                <p className="text-[14px] text-[var(--color-on-dark)]/70 italic">
+                  {ctaFinalSupport}
+                </p>
+              )}
             </div>
           </FadeIn>
         </div>

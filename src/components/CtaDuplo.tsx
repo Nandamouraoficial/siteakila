@@ -32,8 +32,8 @@ export function CtaDuplo({
 
   const secondaryClasses =
     variant === "onDark"
-      ? "border border-[var(--color-on-dark)] text-[var(--color-on-dark)] hover:bg-[var(--color-on-dark)] hover:text-[var(--color-foreground)]"
-      : "border border-[var(--color-foreground)] text-[var(--color-foreground)] hover:bg-[var(--color-foreground)] hover:text-[var(--color-on-dark)]";
+      ? "border border-[var(--color-on-dark)] text-[var(--color-on-dark)] hover:bg-[var(--color-on-dark)] hover:text-[var(--color-surface-dark)]"
+      : "border border-[var(--color-surface-dark)] text-[var(--color-surface-dark)] bg-transparent hover:bg-[var(--color-surface-dark)] hover:text-[var(--color-on-dark)]";
 
   return (
     <>
