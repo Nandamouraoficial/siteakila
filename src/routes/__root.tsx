@@ -74,23 +74,39 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Akila Consultoria — Estratégia de carreira para executivos" },
-      {
-        name: "description",
-        content:
-          "Fernanda Moura. 26 anos de carreira executiva em multinacionais. Estratégias de carreira para quem joga no alto nível.",
-      },
       { name: "author", content: "Akila Consultoria" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Akila Consultoria" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "Akila Consultoria — Estratégia de carreira para executivos" },
-      { name: "twitter:title", content: "Akila Consultoria — Estratégia de carreira para executivos" },
-      { name: "description", content: "Akila Executive Compass is a professional website showcasing executive career consulting services." },
-      { property: "og:description", content: "Akila Executive Compass is a professional website showcasing executive career consulting services." },
-      { name: "twitter:description", content: "Akila Executive Compass is a professional website showcasing executive career consulting services." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7932bc62-3e0c-4e87-beeb-37a3a801d9cc/id-preview-16ac48a2--74751248-9e57-4947-8818-c912104344a7.lovable.app-1778639400098.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7932bc62-3e0c-4e87-beeb-37a3a801d9cc/id-preview-16ac48a2--74751248-9e57-4947-8818-c912104344a7.lovable.app-1778639400098.png" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://akilaexecutive.com/#organization",
+              name: "Akila Consultoria",
+              url: "https://akilaexecutive.com",
+              founder: { "@type": "Person", name: "Fernanda Moura" },
+              description:
+                "Consultoria de estratégia de carreira para executivos seniores, fundada por Fernanda Moura.",
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://akilaexecutive.com/#website",
+              url: "https://akilaexecutive.com",
+              name: "Akila Consultoria",
+              publisher: { "@id": "https://akilaexecutive.com/#organization" },
+              inLanguage: "pt-BR",
+            },
+          ],
+        }),
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
