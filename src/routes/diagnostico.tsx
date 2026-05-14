@@ -21,8 +21,10 @@ export const Route = createFileRoute("/diagnostico")({
         property: "og:description",
         content:
           "Duas horas de análise honesta. Um relatório escrito que você vai usar.",
-      },
+      },,
+      { property: "og:url", content: "https://akilaexecutive.com/diagnostico" }
     ],
+    links: [{ rel: "canonical", href: "https://akilaexecutive.com/diagnostico" }],
   }),
   component: () => (
     <ProductPageShell

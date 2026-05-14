@@ -19,8 +19,10 @@ export const Route = createFileRoute("/mentoria-executiva")({
         property: "og:description",
         content:
           "Nesse nível, não tem manual. Mas tem quem já fez o trajeto. 90 dias com Fernanda Moura.",
-      },
+      },,
+      { property: "og:url", content: "https://akilaexecutive.com/mentoria-executiva" }
     ],
+    links: [{ rel: "canonical", href: "https://akilaexecutive.com/mentoria-executiva" }],
   }),
   component: MentoriaExecutiva,
 });

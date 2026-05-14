@@ -18,8 +18,10 @@ export const Route = createFileRoute("/reposicionamento")({
         property: "og:description",
         content:
           "Perfil reescrito. Estratégia definida. As oportunidades certas chegando.",
-      },
+      },,
+      { property: "og:url", content: "https://akilaexecutive.com/reposicionamento" }
     ],
+    links: [{ rel: "canonical", href: "https://akilaexecutive.com/reposicionamento" }],
   }),
   component: () => (
     <ProductPageShell

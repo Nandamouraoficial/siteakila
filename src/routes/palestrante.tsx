@@ -16,8 +16,10 @@ export const Route = createFileRoute("/palestrante")({
         property: "og:description",
         content:
           "Presença de palco autêntica. Não técnica de slides — magnetismo real.",
-      },
+      },,
+      { property: "og:url", content: "https://akilaexecutive.com/palestrante" }
     ],
+    links: [{ rel: "canonical", href: "https://akilaexecutive.com/palestrante" }],
   }),
   component: () => (
     <ProductPageShell
