@@ -2,7 +2,11 @@ import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/paletas")({
   head: () => ({
-    meta: [{ title: "Teste de Paletas — Akila" }],
+    meta: [
+      { title: "Teste de Paletas — Akila" },
+      { name: "description", content: "Página interna de exploração de paletas de cor da identidade visual da Akila." },
+      { name: "robots", content: "noindex, nofollow" },
+    ],
   }),
   component: PaletasPage,
 });
