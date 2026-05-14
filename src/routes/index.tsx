@@ -104,7 +104,8 @@ function Index() {
                   src={fernandaHero}
                   alt="Fernanda Moura, fundadora da Akila Consultoria"
                   className="w-full h-full object-cover"
-                  loading="eager"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </FadeIn>
