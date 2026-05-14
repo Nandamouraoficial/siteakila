@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /logos
+Disallow: /logofinal
+Disallow: /paletas
+Disallow: /conceitos
+
+Sitemap: https://akilaexecutive.com/sitemap.xml
