@@ -16,7 +16,7 @@ export const Route = createFileRoute("/comunicador")({
         property: "og:description",
         content:
           "Câmera, redes, reuniões que importam. Comunicação magnética como habilidade.",
-      },,
+      },
       { property: "og:url", content: "https://akilaexecutive.com/comunicador" }
     ],
     links: [{ rel: "canonical", href: "https://akilaexecutive.com/comunicador" }],
