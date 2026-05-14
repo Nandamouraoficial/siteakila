@@ -37,7 +37,9 @@ export const Route = createFileRoute("/")({
         content:
           "Fernanda Moura. 26 anos de carreira executiva. Estratégias de carreira para quem joga no alto nível.",
       },
+      { property: "og:url", content: "https://akilaexecutive.com/" },
     ],
+    links: [{ rel: "canonical", href: "https://akilaexecutive.com/" }],
   }),
   component: Index,
 });

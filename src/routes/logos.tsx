@@ -33,7 +33,11 @@ import logo15Dark from "@/assets/logo-akila-option-15-on-dark.png";
 
 export const Route = createFileRoute("/logos")({
   head: () => ({
-    meta: [{ title: "Escolha do Logo — Akila" }],
+    meta: [
+      { title: "Escolha do Logo — Akila" },
+      { name: "description", content: "Página interna de revisão de opções de identidade visual da Akila Consultoria." },
+      { name: "robots", content: "noindex, nofollow" },
+    ],
   }),
   component: LogosPage,
 });

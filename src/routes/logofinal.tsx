@@ -4,7 +4,11 @@ import logoDark from "@/assets/logo-akila-v2-on-dark.png";
 
 export const Route = createFileRoute("/logofinal")({
   head: () => ({
-    meta: [{ title: "Logo Final — AKILA" }],
+    meta: [
+      { title: "Logo Final — AKILA" },
+      { name: "description", content: "Página interna com a versão final do logotipo da Akila Consultoria em diferentes paletas." },
+      { name: "robots", content: "noindex, nofollow" },
+    ],
   }),
   component: LogoFinalPage,
 });

@@ -2,7 +2,11 @@ import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/conceitos")({
   head: () => ({
-    meta: [{ title: "AKILA — Estudo Tipográfico" }],
+    meta: [
+      { title: "AKILA — Estudo Tipográfico" },
+      { name: "description", content: "Página interna de estudo tipográfico e variações da marca Akila Consultoria." },
+      { name: "robots", content: "noindex, nofollow" },
+    ],
     links: [
       {
         rel: "stylesheet",

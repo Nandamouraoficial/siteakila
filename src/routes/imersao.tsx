@@ -20,7 +20,9 @@ export const Route = createFileRoute("/imersao")({
         content:
           "Um dia. Um grupo de até 15 executivos. Clareza sobre o próximo passo.",
       },
+      { property: "og:url", content: "https://akilaexecutive.com/imersao" }
     ],
+    links: [{ rel: "canonical", href: "https://akilaexecutive.com/imersao" }],
   }),
   component: ImersaoPage,
 });

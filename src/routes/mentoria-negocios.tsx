@@ -19,7 +19,9 @@ export const Route = createFileRoute("/mentoria-negocios")({
         content:
           "Estratégia real para o próximo capítulo do seu negócio — com quem já operou em escala internacional.",
       },
+      { property: "og:url", content: "https://akilaexecutive.com/mentoria-negocios" }
     ],
+    links: [{ rel: "canonical", href: "https://akilaexecutive.com/mentoria-negocios" }],
   }),
   component: () => (
     <ProductPageShell
