@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, Supratitle } from "@/components/Section";
 import { FadeIn } from "@/components/FadeIn";
 import { PRODUCTS, WHATSAPP_URL } from "@/lib/site-config";
+import fernandaHero from "@/assets/fernanda-hero.png";
 
 function WhatsAppCta({ align = "left" as "left" | "center" }) {
   return (
@@ -98,8 +99,13 @@ function Index() {
           </div>
           <div className="md:col-span-2 order-1 md:order-2">
             <FadeIn>
-              <div className="aspect-[3/4] w-full bg-[var(--color-gold-soft)] flex items-center justify-center text-[var(--color-muted-foreground)] text-sm tracking-wider">
-                [FOTO_FERNANDA_HERO]
+              <div className="aspect-[3/4] w-full overflow-hidden bg-[var(--color-gold-soft)]">
+                <img
+                  src={fernandaHero}
+                  alt="Fernanda Moura, fundadora da Akila Consultoria"
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                />
               </div>
             </FadeIn>
           </div>
