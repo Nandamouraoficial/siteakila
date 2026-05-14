@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, Supratitle } from "@/components/Section";
 import { FadeIn } from "@/components/FadeIn";
 import { PRODUCTS, WHATSAPP_URL } from "@/lib/site-config";
+import fernandaHero from "@/assets/fernanda-hero.png";
 
 function WhatsAppCta({ align = "left" as "left" | "center" }) {
   return (
