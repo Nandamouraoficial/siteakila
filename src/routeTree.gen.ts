@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ReposicionamentoRouteImport } from './routes/reposicionamento'
 import { Route as PaletasRouteImport } from './routes/paletas'
 import { Route as PalestranteRouteImport } from './routes/palestrante'
@@ -22,6 +23,11 @@ import { Route as ConceitosRouteImport } from './routes/conceitos'
 import { Route as ComunicadorRouteImport } from './routes/comunicador'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReposicionamentoRoute = ReposicionamentoRouteImport.update({
   id: '/reposicionamento',
   path: '/reposicionamento',
@@ -96,6 +102,7 @@ export interface FileRoutesByFullPath {
   '/palestrante': typeof PalestranteRoute
   '/paletas': typeof PaletasRoute
   '/reposicionamento': typeof ReposicionamentoRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -110,6 +117,7 @@ export interface FileRoutesByTo {
   '/palestrante': typeof PalestranteRoute
   '/paletas': typeof PaletasRoute
   '/reposicionamento': typeof ReposicionamentoRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -125,6 +133,7 @@ export interface FileRoutesById {
   '/palestrante': typeof PalestranteRoute
   '/paletas': typeof PaletasRoute
   '/reposicionamento': typeof ReposicionamentoRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -141,6 +150,7 @@ export interface FileRouteTypes {
     | '/palestrante'
     | '/paletas'
     | '/reposicionamento'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -155,6 +165,7 @@ export interface FileRouteTypes {
     | '/palestrante'
     | '/paletas'
     | '/reposicionamento'
+    | '/sitemap.xml'
   id:
     | '__root__'
     | '/'
@@ -169,6 +180,7 @@ export interface FileRouteTypes {
     | '/palestrante'
     | '/paletas'
     | '/reposicionamento'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -184,10 +196,18 @@ export interface RootRouteChildren {
   PalestranteRoute: typeof PalestranteRoute
   PaletasRoute: typeof PaletasRoute
   ReposicionamentoRoute: typeof ReposicionamentoRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/reposicionamento': {
       id: '/reposicionamento'
       path: '/reposicionamento'
@@ -288,7 +308,18 @@ const rootRouteChildren: RootRouteChildren = {
   PalestranteRoute: PalestranteRoute,
   PaletasRoute: PaletasRoute,
   ReposicionamentoRoute: ReposicionamentoRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
